@@ -29,7 +29,7 @@
         <p><a href='./about.php'>About us</a></p>
         <p><a style='font-weight:bold' href='./team2/login.php'>Log In</a></p>
         </ul>
-        </div>"
+        </div>";
     }
 ?>
 </body>
