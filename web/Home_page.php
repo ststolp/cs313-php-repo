@@ -108,10 +108,10 @@
  what does the character want? The stakes should also be high. Conflict means that something needs to say
  no. Something or someone needs to stop the hero from reaching his goal. The story ends with a knockout.
  This is how the main character resolves the conflict and he may or may not achieve his goal.</p>
- </br>
+ <br>
  <p>If you click the button below, a jQuery request will be made and will retrieve some text.</p>
  </div>
  <div id="vid"></div>
- <button>See my video.</button>
+ <button>See my text.</button>
 </body>
 </html>
