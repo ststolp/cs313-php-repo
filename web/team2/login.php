@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php 
-   include './header.php';
+   include './header.php?file=login';
 ?>
 <button>Log in as an Administrator</button>
 <button>Log in as a Tester</button>

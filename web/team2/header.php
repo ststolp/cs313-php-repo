@@ -5,7 +5,6 @@
 <body>
 <?php 
     $file = $_GET['file'];
-    echo "<p>The file is: $file</p><div>";
     if ($file == "home") {
     echo "<ul>
         <p><a style='font-weight:bold' href='./home.php'>Home</a></p>
@@ -22,12 +21,20 @@
         </ul>
         </div>";
     }
-    else {
+    else if ($file == "login") {
       echo "<div>
     <ul>
         <p><a href='./home.php'>Home</a></p>
         <p><a href='./about.php'>About us</a></p>
         <p><a style='font-weight:bold' href='./login.php'>Log In</a></p>
+        </ul>
+        </div>";
+    } else {
+          echo "<div>
+    <ul>
+        <p><a href='./home.php'>Home</a></p>
+        <p><a href='./about.php'>About us</a></p>
+        <p><a href='./login.php'>Log In</a></p>
         </ul>
         </div>";
     }
