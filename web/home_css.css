@@ -6,6 +6,15 @@
     background-color: rgb(51, 204, 204);
     color: white;
     text-shadow: 3px 3px rgb(0, 102, 153);
+    margin: 0;
+    text-align: center;
+    padding: 20%;
+    font-family: "Book Antiqua";
+}
+
+.content {
+    padding: 15%;
+    font-family: "Tahoma";
 }
 div.gallery img {
    width: 70%;
