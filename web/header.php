@@ -17,7 +17,7 @@
        echo "<div>
     <ul>
         <p><a href='./home.php'>Home</a></p>
-        <p><a style='font-weight: bold' href='./team2/about.php'>About us</a></p>
+        <p><a style='font-weight: bold' href='./about.php'>About us</a></p>
         <p><a href='./login.php'>Log In</a></p>
         </ul>
         </div>";
@@ -27,7 +27,7 @@
     <ul>
         <p><a href='./home.php'>Home</a></p>
         <p><a href='./about.php'>About us</a></p>
-        <p><a style='font-weight:bold' href='./team2/login.php'>Log In</a></p>
+        <p><a style='font-weight:bold' href='./login.php'>Log In</a></p>
         </ul>
         </div>";
     }
