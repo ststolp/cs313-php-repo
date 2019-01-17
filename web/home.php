@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php 
-    include './team2/header.php?file=home';
+    include './header.php?file=home';
 ?>
 <p>Welcome, you're not logged in.</p>
 </body>
