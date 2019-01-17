@@ -7,7 +7,7 @@
    <script>
    $(document).ready(functionion() {
        $("button").click(function() {
-          $("#vid").load("https://www.youtube.com/watch?v=VN1MvKjuFyg">
+          $("#vid").load("https://www.youtube.com/watch?v=VN1MvKjuFyg");
        });
    });
        </script>
