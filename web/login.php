@@ -4,6 +4,7 @@
 </head>
 <body>
 <?php 
+    $GLOBALS["file"] = "login";
    include 'header.php';
 ?>
 <button>Log in as an Administrator</button>
