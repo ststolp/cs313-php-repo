@@ -21,7 +21,7 @@
         </ul>
         </div>";
     }
-    else if ($file == "login") {
+    else {
       echo "<div>
     <ul>
         <p><a href='./home.php'>Home</a></p>
@@ -29,15 +29,7 @@
         <p><a style='font-weight:bold' href='./login.php'>Log In</a></p>
         </ul>
         </div>";
-    } else {
-          echo "<div>
-    <ul>
-        <p><a href='./home.php'>Home</a></p>
-        <p><a href='./about.php'>About us</a></p>
-        <p><a href='./login.php'>Log In</a></p>
-        </ul>
-        </div>";
-    }
+    } 
 ?>
 </body>
 </html>
