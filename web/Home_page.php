@@ -3,11 +3,13 @@
 <head>
    <title>Steven's Home</title>
    <link rel="stylesheet" type="text/css" href="./home_css.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script>
    $(document).ready(functionion() {
        $("button").click(function() {
           $("#vid").load("https://www.youtube.com/watch?v=VN1MvKjuFyg">
        });
+   });
        </script>
 </head>
 <body>
