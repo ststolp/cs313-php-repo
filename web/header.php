@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php 
-    $file = $_GET["file"];
+    $file = $_GET['file'];
     if ($file == "home") {
       echo "<div>
     <ul>
