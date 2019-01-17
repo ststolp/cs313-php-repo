@@ -5,11 +5,13 @@
 <link rel="stylesheet" type="text/css" href="./home_css.css">
 </head>
 <body>
+
+<div class="header">
+   <h1>Talents of Steven Stolp</h1>
+</div>
 <?php
    echo "<br>" . "The date is: " . date("Y/m/d"). "<br>";
 ?>
-
-<h1>Talents of Steven Stolp</h1>
 <a href="./assignments.php">My assignments</a>
 <p>Hello, my name is Steven Stolp,
  I'm from Utah and I'm the eighth child of nine children. I like to sing, draw, and write stories.
@@ -38,6 +40,9 @@
            <br>
            <br>
            <br>
+           <br>
+           <br>
+           <br>
        </div>
 </div>
 </div>
@@ -50,6 +55,8 @@
            <br>
            <br>
            <br>
+           <br>
+           <br>
        </div>
 </div>
 </div>
@@ -57,6 +64,7 @@
 <div class="gallery">
     <img src="./sunset.jpg" alt="sunset">
        <div class="desc">Sunset on an ocean
+           <br>
            <br>
            <br>
            <br>
@@ -83,10 +91,10 @@
 
  <div>
  <h2>Creative Writing 101</h2>
- <p>There are four essential elements a plot needs to be successful. The mroe closely you follow this
+ <p>There are four essential elements a plot needs to be successful. The more closely you follow this
  pattern, the more likely your plot will work. The elements are: Lead, Objective, Conflict, and Knockout, or
  LOCK. The lead means that you have either a setting, main character, or situation that is interesting and
- the reader wants to know more about him. Something out of the ordinary. There also needs to be an objective,
+ the reader wants to know more about her. Something out of the ordinary. There also needs to be an objective,
  what does the character want? The stakes should also be high. Conflict means that something needs to say
  no. Something or someone needs to stop the hero from reaching his goal. The story ends with a knockout.
  This is how the main character resolves the conflict and he may or may not achieve his goal. 
