@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-img {
+div.gallery img {
    width: 100%;
    height: auto;
 }

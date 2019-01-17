@@ -27,7 +27,7 @@
 </div>
 
 <div class="gallery">
-    <img src="./girl-jumping.jpg" alt="jump">
+    <img src="./girl_jumping.jpg" alt="jump">
        <div class="desc">Girl Jumping</div>
 </div>
 
@@ -37,7 +37,7 @@
 </div>
 
 <div class="gallery">
-    <img src="./dnd_rose.jpg" alt="dnd character">
+    <img src="./dnd_Rose.jpg" alt="dnd character">
        <div class="desc">My D&D character</div>
 </div>
 
