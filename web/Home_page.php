@@ -89,7 +89,7 @@
 </div>
 </div>
 
- <div>
+ <div class="content">
  <h2>Creative Writing 101</h2>
  <p>There are four essential elements a plot needs to be successful. The more closely you follow this
  pattern, the more likely your plot will work. The elements are: Lead, Objective, Conflict, and Knockout, or
