@@ -12,7 +12,7 @@
 <body>
 <?php 
     $file = "home";
-    include 'header.php';
+    include 'header.php?file=home';
 ?>
 <p>Welcome, you're not logged in.</p>
 </body>
