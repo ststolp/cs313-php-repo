@@ -5,8 +5,7 @@
 <body>
 <?php 
     $file = $_SERVER['HTTP_REFERER'];
-    echo "the file is: $file";
-    if ($file == "https://vast-cliffs-71677.herokuapp.com/team2/home/php") {
+    if ($file == "https://vast-cliffs-71677.herokuapp.com/team2/home.php") {
     echo "<ul>
         <p><a style='font-weight:bold' href='./home.php'>Home</a></p>
         <p><a href='./about.php'>About us</a></p>
