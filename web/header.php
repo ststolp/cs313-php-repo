@@ -6,7 +6,7 @@
 <?php 
     $file = $_GET['file'];
     if ($file == "home") {
-      echo "<div>
+      echo "<p>The file is: $file</p><div>
     <ul>
         <p><a style='font-weight:bold' href='./home.php'>Home</a></p>
         <p><a href='./about.php'>About us</a></p>

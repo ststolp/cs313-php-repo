@@ -4,7 +4,6 @@
 </head>
 <body>
 <?php 
-    $file = "about";
    include './team2/header.php?file=about';
 ?>
 <h1>About BUYI php</h1>

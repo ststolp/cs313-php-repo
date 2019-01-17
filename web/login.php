@@ -4,7 +4,6 @@
 </head>
 <body>
 <?php 
-    $file = "login";
    include './team2/header.php?file=login';
 ?>
 <button>Log in as an Administrator</button>
