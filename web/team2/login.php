@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <script>
-    $(document).ready(function(){
-       $("#admin").click(function() {
-          $("#vid").load("./logtype.php");
-       });
-   });
-    $(document).ready(function(){
-       $("#tester").click(function() {
-          $("#vid").load("./logtype.php");
-       });
-   });
-   }
 </head>
 <body>
 <?php 
