@@ -12,6 +12,8 @@ div.gallery {
 }
  
 div.desc {
+    width: 22%;
+    float: left;
     padding: 4%;
     text-align: center;
     color: white;
