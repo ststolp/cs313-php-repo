@@ -5,9 +5,9 @@
 <body>
 <?php 
     $file = $_GET['file'];
+    echo "<p>The file is: $file</p><div>";
     if ($file == "home") {
-      echo "<p>The file is: $file</p><div>
-    <ul>
+    echo "<ul>
         <p><a style='font-weight:bold' href='./home.php'>Home</a></p>
         <p><a href='./about.php'>About us</a></p>
         <p><a id='login' href='./login.php'>Log In</a></p>
