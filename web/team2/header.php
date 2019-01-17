@@ -5,6 +5,7 @@
 <body>
 <?php 
     $file = $_SERVER['PHP_SELF'];
+    echo "The file name is $file";
     if ($file == "home.php") {
     echo "<ul>
         <p><a style='font-weight:bold' href='./home.php'>Home</a></p>
