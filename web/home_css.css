@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+   width: 100%;
+   height: auto;
+}
+
+div.gallery {
+   background-color: black;
+   float: left;
+}
+ 
+div.desc {
+    padding: 4%;
+    text-align: center;
+}
+
+div.gallery:hover {
+    box-shadow: 3% 3% 1% white;
+}
+
