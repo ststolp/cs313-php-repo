@@ -18,31 +18,66 @@
  <div class="responsive">
  <div class="gallery">
     <img src="./red.jpg" alt="red">
-       <div class="desc">Black and White Cartoon</div>
+       <div class="desc">Black and White Cartoon
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+       </div>
 </div> 
 </div>
 <div class="responsive">
 <div class="gallery">
    <img src="./house.jpg" alt="house">
-       <div class="desc">House</div>
+       <div class="desc">House
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+       </div>
 </div>
 </div>
 <div class="responsive">
 <div class="gallery">
     <img src="./girl_jumping.jpg" alt="jump">
-       <div class="desc">Girl Jumping</div>
+       <div class="desc">Girl Jumping
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+       </div>
 </div>
 </div>
 <div class="responsive">
 <div class="gallery">
     <img src="./sunset.jpg" alt="sunset">
-       <div class="desc">Sunset on an ocean</div>
+       <div class="desc">Sunset on an ocean
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+       </div>
 </div>
 </div>
 <div class="responsive">
 <div class="gallery">
     <img src="./dnd_Rose.jpg" alt="dnd character">
-       <div class="desc">My D&D character</div>
+       <div class="desc">My D&D character
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+       </div>
 </div>
 </div>
 
