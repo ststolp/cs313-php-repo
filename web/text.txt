@@ -1,0 +1,1 @@
+This is my text from a text file which was retrieved from a jQuery AJAX request. It's a lot easier than a normal AJAX request.

@@ -7,7 +7,7 @@
    <script>
    $(document).ready(function(){
        $("button").click(function() {
-          $("#vid").load("https://www.youtube.com/watch?v=VN1MvKjuFyg");
+          $("#vid").load("./text.txt");
        });
    });
        </script>
@@ -109,8 +109,7 @@
  no. Something or someone needs to stop the hero from reaching his goal. The story ends with a knockout.
  This is how the main character resolves the conflict and he may or may not achieve his goal.</p>
  </br>
- <p>If you click the button below, a jQuery request will be made and will retrieve my video. But you
- don't have to see if if you don't want to.</p>
+ <p>If you click the button below, a jQuery request will be made and will retrieve some text.</p>
  </div>
  <div id="vid"></div>
  <button>See my video.</button>
