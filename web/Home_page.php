@@ -15,29 +15,35 @@
  I'm from Utah and I'm the eighth child of nine children. I like to sing, draw, and write stories.
  Below are some of my doodles I made on my phone. I would tell you a story but I decided to give my
  crash course on creative writing.</p>
+ <div class="responsive">
  <div class="gallery">
     <img src="./red.jpg" alt="red">
        <div class="desc">Black and White Cartoon</div>
 </div> 
-
+</div>
+<div class="responsive">
 <div class="gallery">
    <img src="./house.jpg" alt="house">
        <div class="desc">House</div>
 </div>
-
+</div>
+<div class="responsive">
 <div class="gallery">
     <img src="./girl_jumping.jpg" alt="jump">
        <div class="desc">Girl Jumping</div>
 </div>
-
+</div>
+<div class="responsive">
 <div class="gallery">
     <img src="./sunset.jpg" alt="sunset">
        <div class="desc">Sunset on an ocean</div>
 </div>
-
+</div>
+<div class="responsive">
 <div class="gallery">
     <img src="./dnd_Rose.jpg" alt="dnd character">
        <div class="desc">My D&D character</div>
+</div>
 </div>
 
  <div>
