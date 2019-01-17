@@ -8,12 +8,13 @@
     text-shadow: 3px 3px rgb(0, 102, 153);
     margin: 0;
     text-align: center;
-    padding: 7%;
+    padding: 5%;
     font-family: "Book Antiqua";
+    margin: 0;
 }
 
 .content {
-    padding: 5%;
+    padding: 7%;
     font-family: "Tahoma";
 }
 div.gallery img {

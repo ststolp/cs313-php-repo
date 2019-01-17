@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Steven's Home</title>
-<link rel="stylesheet" type="text/css" href="./home_css.css">
+   <title>Steven's Home</title>
+   <link rel="stylesheet" type="text/css" href="./home_css.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+   $(document).ready(functionion() {
+       $("button").click(function() {
+          $("#vid").load("https://www.youtube.com/watch?v=VN1MvKjuFyg">
+       });
+       </script>
 </head>
 <body>
 
@@ -13,10 +19,12 @@
    echo "<br>" . "The date is: " . date("Y/m/d"). "<br>";
 ?>
 <a href="./assignments.php">My assignments</a>
+<div class="content">
 <p>Hello, my name is Steven Stolp,
  I'm from Utah and I'm the eighth child of nine children. I like to sing, draw, and write stories.
  Below are some of my doodles I made on my phone. I would tell you a story but I decided to give my
  crash course on creative writing.</p>
+</div>
  <div class="responsive">
  <div class="gallery">
     <img src="./red.jpg" alt="red">
@@ -97,6 +105,12 @@
  the reader wants to know more about her. Something out of the ordinary. There also needs to be an objective,
  what does the character want? The stakes should also be high. Conflict means that something needs to say
  no. Something or someone needs to stop the hero from reaching his goal. The story ends with a knockout.
- This is how the main character resolves the conflict and he may or may not achieve his goal. 
+ This is how the main character resolves the conflict and he may or may not achieve his goal.</p>
+ </br>
+ <p>If you click the button below, a jQuery request will be made and will retrieve my video. But you
+ don't have to see if if you don't want to.</p>
+ </div>
+ <div id="vid"></div>
+ <button>See my video.</button>
 </body>
 </html>
