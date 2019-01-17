@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php 
-    $GLOBALS["file"] = "home";
+    $file = "home";
     include 'header.php';
 ?>
 <p>Welcome, you're not logged in.</p>
