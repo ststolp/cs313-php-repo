@@ -3,7 +3,7 @@
 }
 
 div.gallery img {
-   width: 70%;
+   width: 20%;
    height: auto;
 }
 
@@ -15,6 +15,7 @@ div.gallery {
 div.desc {
     padding: 4%;
     text-align: center;
+    color: white;
 }
 
 div.gallery:hover {

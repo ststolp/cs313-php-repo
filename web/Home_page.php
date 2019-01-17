@@ -6,8 +6,7 @@
 </head>
 <body>
 <?php
-   $timeofday = gettimeofday();
-   echo "The time of day is: $timeofday";
+   echo "<br>" . "The date is: " . date("Y/m/d"). "<br>";
 ?>
 
 <h1>Talents of Steven Stolp</h1>
