@@ -13,10 +13,7 @@
             echo "<input type='radio' name ='major' value='$major'>$major<br>";
         }
    ?>
-    <input type="radio" name="major" value="Computer Science">Computer Science<br>
-    <input type="radio" name="major" value="Web Design and Development">Web design<br>
-    <input type="radio" name="major" value="CIT">CIT<br>
-    <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
+    
     <p>Comments</p>
     <textarea name="comments"></textarea>   
     <input type="checkbox" name="check[]" value="NA">North America<br>
