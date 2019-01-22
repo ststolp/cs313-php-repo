@@ -3,10 +3,11 @@
 </head>
 <body>
 <?php
-    echo "Your name is: " . $_GET["name"]
-    . "<br> Mailto <a href='" . $_GET["email"] . "'>" . $_GET["email"] . "</a>".
-    "<br> Your major is: " . $_GET["major"] .
-    "<br> Your comments: " . $_GET["comments"];
+    
+    echo "Your name is: " . $_POST["name"]
+    . "<br> Mailto <a href='" . $_POST["email"] . "'>" . $_POST["email"] . "</a>".
+    "<br> Your major is: " . $_POST["major"] .
+    "<br> Your comments: " . $_POST["comments"];
     ?>
 </body>
 </html>
