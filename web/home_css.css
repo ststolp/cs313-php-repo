@@ -48,3 +48,9 @@ div.gallery:hover {
     width: 24.9999%;
 }
 
+.menu {
+    color: rgb(0, 102, 153);
+    background-color:#333333;
+    font-family: Helvetica;
+}
+
