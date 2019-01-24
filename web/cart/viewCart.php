@@ -8,12 +8,13 @@
 </head>
 <body>
 <?php 
+    echo "Items: <br>";
    $array = $_GET["item"];
     foreach($array as $value) {
         $_SESSION[$value] = $value;
     }
     foreach($_SESSION as $value) {
-        echo "Items: <br> {$value} <br>";
+        echo "{$value} <br>";
     }
 ?>
 <a href="browse.php">Continue Shopping</a>

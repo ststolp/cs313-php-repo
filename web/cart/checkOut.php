@@ -5,19 +5,12 @@
 <html>
 <head>
     <title>Checkout</title>
-    <script>
-    function address() {
-        <?php
-        $string = $dom->getElementById('address');
-        $address = $string->nodeValue;
-        $_SESSION["address"] = $address;
-        ?>
-    }
-    </script>
 </head>
 <body>
 <h1>Please enter your address</h1>
-<input id="address" type="text" onchange="address()">
+<form action="confirm.php" method="get">
+<input type="text" name="address">
+<input type="submit">
 <a href="viewCart.php">Return to Cart</a>
 <a href="confirm.php">Confirm Purchase</a>
 </body>
