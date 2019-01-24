@@ -5,16 +5,24 @@
 <html>
 <head>
     <title>View Cart</title>
+    <script>
+      funtion add(item) {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if this.readyState == 4 && this.status == 200) {
+                 //   document.getElementById("cart").value = document.getElementById("cart").value++;
+                }
+            }
+            xmlhttp.open("POST", "add.php?page=&item=" + item, true);
+            xmlhttp.send(); 
+        }
+    </script>
 </head>
 <body>
 <?php 
-    echo "Items: <br>";
-   $array = $_POST["item"];
-    foreach($array as $value) {
-        $_SESSION[$value] = $value;
-    }
-    foreach($_SESSION as $value) {
-        echo "{$value} <br>";
+    echo "Items: ";
+    foreach($_SESSION["cart"] as $value) {
+        echo "{$value} <button onclick='add($value)'>Remove</button><br>";
     }
 ?>
 <a href="browse.php">Continue Shopping</a>

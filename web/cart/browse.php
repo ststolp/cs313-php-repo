@@ -5,20 +5,30 @@
 <html>
 <head>
     <title>browse</title>
+    <script>
+        funtion add(item) {
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if this.readyState == 4 && this.status == 200) {
+                  //  document.getElementById("cart").value = document.getElementById("cart").value++;
+                }
+            }
+            xmlhttp.open("POST", "add.php?page=browse&item=" + item, true);
+            xmlhttp.send(); 
+        }
 </head>
 <body>
 <h1>Alien Attack Preparedness</h1>
-<form action="viewCart.php" method="post">
 <p>Fleet of trained Fighter Pilots</p>
-<input type="checkbox" name="item[]" value="Alien Space Fleet">
+<button onclick="add('Alien Space Fleet')">Add to Cart</button>
 <p>Alien Repellent</p>
-<input type="checkbox" name="item[]" value="Space Repellent">
+<button onclick="add('Space Repellent')">Add to Cart</button>
 <p>High Frequency Speakers</p>
-<input type="checkbox" name="item[]" value="High Frequency Speakers">
+<button onclick="add('High Frequency Speakers')">Add to Cart</button>
 <p>The Common Cold</p>
-<input type="checkbox" name="item[]" value="The Cold Virus">
+<button onclick="add('The Cold Virus')">Add to Cart</button>
 <p>Laser Cannon Security System</p>
-<input type="checkbox" name="item[]" value="Laser Cannon Security System">
-<input type="submit">
+<button onclick="add('Laser Cannon Security System')">Add to Cart</button>
+<a href="checkOut.php">Proceed to checkOut</a>
 </body>
 </html>
