@@ -12,7 +12,7 @@
     $address = htmlspecialchars($_POST["address"]);
     $_SESSION["address"] = $address;
     echo "Order Information: <br>";
-    foreach($_SESSION as $key=>$value) {
+    foreach($_SESSION["cart"] as $key=>$value) {
         echo "{$value} <br>";
     }
     ?>
