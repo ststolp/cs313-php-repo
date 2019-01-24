@@ -11,7 +11,7 @@
     <?php
     echo "Order Information: <br>";
     foreach($_SESSION as $key=>$value) {
-        echo "$value";
+        echo "{$value}";
     }
     ?>
 </body>

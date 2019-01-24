@@ -11,10 +11,9 @@
    $array = $_GET["item"];
     foreach($array as $value) {
         $_SESSION[$value] = $value;
-        echo "{$value} <br>";
     }
     foreach($_SESSION as $value) {
-        echo "{$value} <br>";
+        echo "Items: <br> {$value} <br>";
     }
 ?>
 <a href="browse.php">Continue Shopping</a>
