@@ -10,7 +10,7 @@
 <?php 
    $array = $_GET["item"];
     foreach($array as $value) {
-        $_SESSTION[] = $value;
+        $_SESSTION["some"] = $value;
         echo "{$value} <br>";
     }
     print_r($_SESSION);
