@@ -20,13 +20,13 @@
 </head>
 <body>
 <form action="add.php?page=viewCart" method="post">
-<?php 
-    echo "Items: ";
-    foreach($_SESSION["cart"] as $value) {
-        echo "{$value}<input type='checkbox' name='item[]' value='$value'>Remove<br>";
-    }
-?>
-<button type="submit">
+   <?php 
+       echo "Items: ";
+       foreach($_SESSION["cart"] as $value) {
+           echo "{$value}<input type='checkbox' name='item[]' value='$value'>Remove<br>";
+       }
+    ?>
+<input type="submit">
 </form>
 <a href="browse.php">Continue Shopping</a>
 <a href="checkOut.php">Go to Checkout</a>
