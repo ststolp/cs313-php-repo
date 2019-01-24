@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php 
-   print_r($_GET["item"];
+   print_r($_GET["item"]);
     foreach($_GET as $key=>$value) {
         $_SESSTION[$key] = $value;
     }
