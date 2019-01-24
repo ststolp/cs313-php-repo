@@ -15,16 +15,17 @@
 </head>
 <body>
 <h1>Alien Attack Preparedness</h1>
+<form action="viewCart.php" method="POST">
 <p>Fleet of trained Fighter Pilots</p>
-<button onclick="buy('Alien Space Fleet')">Purchase</button>
+<input type="checkbox" name="item[]" value="Alien Space Fleet">
 <p>Alien Repellent</p>
-<button onclick="buy('Space Repellent')">Purchase</button>
+<input type="checkbox" name="item[]" value="Space Repellent">
 <p>High Frequency Speakers</p>
-<button onclick="buy('High Frequency Speakers')">Purchase</button>
+<input type="checkbox" name="item[]" value="High Frequency Speakers">
 <p>The Common Cold</p>
-<button onclick="buy('The Cold')">Purchase</button>
+<input type="checkbox" name="item[]" value="The Cold Virus">
 <p>Laser Cannon Security System</p>
-<button onclick="buy('Laser Cannon Security System')">Purchase</button>
-<a href="viewCart.php">Go to Cart</a>
+<input type="checkbox" name="item[]" value="Laser Cannon Security System">
+<input type="submit">
 </body>
 </html>

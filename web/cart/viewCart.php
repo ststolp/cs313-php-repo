@@ -8,11 +8,14 @@
 </head>
 <body>
 <?php 
+    foreach($_GET["item"] as $key=>$value) {
+        $_SESSTION[$key] = $value;
+    }
     foreach ($_SESSION as $key=>$item) {
         echo "$item<br>";
     }
 ?>
 <a href="browse.php">Continue Shopping</a>
-<a href="checkOutphp">Go to Checkout</a>
+<a href="checkOut.php">Go to Checkout</a>
 </body>
 </html>
