@@ -6,7 +6,7 @@ if ($_REQUEST["page"] == "browse") {
     header('Location: browse.php');
    } else {
        $item = $_REQUEST["item"];
-       unset($_SESSION["cart"][$item]);
+       unset($GLOBALS[_SESSION]["cart"][$item]);
       header('Location: viewCart.php');
    }
 ?>
