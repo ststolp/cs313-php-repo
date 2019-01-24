@@ -9,11 +9,11 @@
 <body>
 <?php 
    $array = $_GET["item"];
-    foreach($array as $key=>$value) {
-        $_SESSTION[$key] = $value;
+    foreach($array as &$value) {
+        $_SESSTION[$value] = $value;
     }
-    foreach ($_SESSION as $key=>$item) {
-        echo "$item<br>";
+    foreach($_SESSION as $key=>$item) {
+        echo "{$item}<br>";
     }
 ?>
 <a href="browse.php">Continue Shopping</a>
