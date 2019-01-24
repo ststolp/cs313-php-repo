@@ -6,7 +6,7 @@
 <head>
     <title>browse</title>
     <script>
-        function buy($item) {
+        function buy(<?php $item ?>) {
             <?php 
                $_SESSION[$item] = $item;
             ?>
