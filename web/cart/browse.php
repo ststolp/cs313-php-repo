@@ -16,6 +16,7 @@
             xmlhttp.open("POST", "add.php?page=browse&item=" + item, true);
             xmlhttp.send(); 
         }
+        </script>
 </head>
 <body>
 <h1>Alien Attack Preparedness</h1>
