@@ -9,7 +9,7 @@
 <body>
 <?php 
    $array = $_GET["item"];
-    foreach($array as &$value) {
+    foreach($array as $value) {
         $_SESSTION[] = $value;
         echo "{$value} <br>";
     }
