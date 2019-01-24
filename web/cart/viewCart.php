@@ -10,7 +10,7 @@
 <?php 
    $array = $_GET["item"];
     foreach($array as &$value) {
-        $_SESSTION[$value] = $value;
+        $_SESSTION["item[]"] = $value;
         echo "first one {$value}";
     }
     foreach($_SESSION as $key=>$item) {
