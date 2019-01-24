@@ -13,7 +13,7 @@
                  //   document.getElementById("cart").value = document.getElementById("cart").value++;
                 }
             }
-            xmlhttp.open("POST", "add.php?page=&item=" + item, true);
+            xmlhttp.open("POST", "add.php?page=viewCart&item=" + item, true);
             xmlhttp.send(); 
         }
     </script>

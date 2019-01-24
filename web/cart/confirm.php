@@ -11,7 +11,7 @@
     <?php
     $address = htmlspecialchars($_POST["address"]);
     $_SESSION["address"] = $address;
-    echo "Order Information: <br>";
+    echo "Order Information: <br> " + $_SESSION["address"];
     foreach($_SESSION["cart"] as $key=>$value) {
         echo "{$value} <br>";
     }
