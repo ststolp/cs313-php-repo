@@ -8,8 +8,8 @@
 </head>
 <body>
 <?php 
-   print_r($_GET["item"]);
-    foreach($_GET as $key=>$value) {
+   $array = $_GET["item"];
+    foreach($array as $key=>$value) {
         $_SESSTION[$key] = $value;
     }
     foreach ($_SESSION as $key=>$item) {
