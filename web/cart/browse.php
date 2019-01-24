@@ -25,5 +25,6 @@
 <button onclick="buy('The Cold')">Purchase</button>
 <p>Laser Cannon Security System</p>
 <button onclick="buy('Laser Cannon Security System')">Purchase</button>
+<a href="viewCart.php">Go to Cart</a>
 </body>
 </html>
