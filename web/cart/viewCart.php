@@ -10,10 +10,12 @@
 <?php 
    $array = $_GET["item"];
     foreach($array as $value) {
-        $_SESSTION["some"] = $value;
+        $_SESSION[$value] = $value;
         echo "{$value} <br>";
     }
-    echo $_SEESION["some"];
+    foreach($_SESSION as $value) {
+        echo "{$value} <br>";
+    }
 ?>
 <a href="browse.php">Continue Shopping</a>
 <a href="checkOut.php">Go to Checkout</a>
