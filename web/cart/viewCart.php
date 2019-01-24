@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>View Cart</title>
+    <link rel="stylesheet" type="text/css" href="cartStyle.css">
     <script>
       function add(item) {
             let xmlhttp = new XMLHttpRequest();
@@ -19,6 +20,7 @@
     </script>
 </head>
 <body>
+<div content="content">
 <form action="add.php?page=viewCart" method="post">
    <?php 
        echo "Items: ";
@@ -27,6 +29,7 @@
        }
     ?>
 <input type="submit">
+</div>
 </form>
 <a href="browse.php">Continue Shopping</a>
 <a href="checkOut.php">Go to Checkout</a>

@@ -4,10 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="cartStyle.css">
     <title>Confirm Order</title>
 </head>
 <body>
     <h1>Order Confirmation</h1>
+    <div class="content">
     <?php
     $address = htmlspecialchars($_POST["address"]);
     $_SESSION["address"] = $address;
@@ -16,5 +18,6 @@
         echo "{$value} <br>";
     }
     ?>
+    </div>
 </body>
 </html>

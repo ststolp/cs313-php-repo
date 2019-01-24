@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>browse</title>
+    <link rel="stylesheet" type="text/css" href="cartStyle.css">
     <script>
         function add(item) {
             let xmlhttp = new XMLHttpRequest();
@@ -19,6 +20,7 @@
         </script>
 </head>
 <body>
+<div class="content">
 <h1>Alien Attack Preparedness</h1>
 <p>Fleet of trained Fighter Pilots</p>
 <button onclick="add('Alien Space Fleet')">Add to Cart</button>
@@ -29,6 +31,7 @@
 <p>The Common Cold</p>
 <button onclick="add('The Cold Virus')">Add to Cart</button>
 <p>Laser Cannon Security System</p>
+</div>
 <button onclick="add('Laser Cannon Security System')">Add to Cart</button>
 <a href="viewCart.php">View Cart</a>
 </body>
