@@ -19,12 +19,14 @@
     </script>
 </head>
 <body>
+<form action="add.php?page=viewCart" method="post">
 <?php 
     echo "Items: ";
     foreach($_SESSION["cart"] as $value) {
-        echo "{$value}<button onclick='add('$value '') ''>Remove</button><br>";
+        echo "{$value}<input type='button' name='item[]' value='$item'>Remove</button><br>";
     }
 ?>
+<button type="submit">
 <a href="browse.php">Continue Shopping</a>
 <a href="checkOut.php">Go to Checkout</a>
 </body>

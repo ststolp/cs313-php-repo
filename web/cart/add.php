@@ -5,8 +5,9 @@ if ($_REQUEST["page"] == "browse") {
     $_SESSION["cart"][$item] = $item;
     header('Location: browse.php');
    } else {
-       $item = $_REQUEST["item"];
+       foreach($_POST["item"] as $item) {
        unset($GLOBALS[_SESSION]["cart"][$item]);
+       }
       header('Location: viewCart.php');
    }
 ?>
