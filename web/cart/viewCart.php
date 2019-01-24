@@ -23,7 +23,7 @@
 <?php 
     echo "Items: ";
     foreach($_SESSION["cart"] as $value) {
-        echo "{$value}<input type='button' name='item[]' value='$value'>Remove</button><br>";
+        echo "{$value}<input type='checkbox' name='item[]' value='$value'>Remove<br>";
     }
 ?>
 <button type="submit">
