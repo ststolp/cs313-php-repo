@@ -5,6 +5,8 @@
         <link rel="stylesheet" type="text/css" href="./home_css.css">
 </head>
 <body>
-    <h1>Coming Soon</h1>
+    <h1>CS313 Assignames</h1>
+    <a href="./cart/browse.php">PHP Shopping</a>
+
 </body>
 </html>
