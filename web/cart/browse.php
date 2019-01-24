@@ -31,8 +31,9 @@
 <p>The Common Cold</p>
 <button onclick="add('The Cold Virus')">Add to Cart</button>
 <p>Laser Cannon Security System</p>
-</div>
+
 <button onclick="add('Laser Cannon Security System')">Add to Cart</button>
 <a href="viewCart.php">View Cart</a>
+</div>
 </body>
 </html>

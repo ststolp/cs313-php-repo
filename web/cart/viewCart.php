@@ -25,7 +25,7 @@
    <?php 
        echo "Items: ";
        foreach($_SESSION["cart"] as $value) {
-           echo "{$value}<input type='checkbox' name='item[]' value='$value'>Remove<br>";
+           echo "{$value}  Remove: <input type='checkbox' name='item[]' value='$value'><br>";
        }
     ?>
 <input type="submit">
