@@ -9,7 +9,7 @@
 <body>
 <?php 
     echo "Items: <br>";
-   $array = $_GET["item"];
+   $array = $_POST["item"];
     foreach($array as $value) {
         $_SESSION[$value] = $value;
     }

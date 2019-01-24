@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Please enter your address</h1>
-<form action="confirm.php" method="get">
+<form action="confirm.php" method="post">
 <input type="text" name="address">
 <input type="submit">
 <a href="viewCart.php">Return to Cart</a>

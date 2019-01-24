@@ -9,11 +9,11 @@
 <body>
     <h1>Order Confirmation</h1>
     <?php
-    $address = $_GET["address"];
+    $address = htmlspecialchars($_POST["address"]);
     $_SESSION["address"] = $address;
     echo "Order Information: <br>";
     foreach($_SESSION as $key=>$value) {
-        echo "{$value}";
+        echo "{$value} <br>";
     }
     ?>
 </body>

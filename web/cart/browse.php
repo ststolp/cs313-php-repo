@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Alien Attack Preparedness</h1>
-<form action="viewCart.php" method="GET">
+<form action="viewCart.php" method="post">
 <p>Fleet of trained Fighter Pilots</p>
 <input type="checkbox" name="item[]" value="Alien Space Fleet">
 <p>Alien Repellent</p>
