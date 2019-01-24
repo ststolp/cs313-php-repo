@@ -5,17 +5,10 @@
 <html>
 <head>
     <title>browse</title>
-    <script>
-        function buy(<?php $item ?>) {
-            <?php 
-               $_SESSION[$item] = $item;
-            ?>
-        }
-    </script>
 </head>
 <body>
 <h1>Alien Attack Preparedness</h1>
-<form action="viewCart.php" method="POST">
+<form action="viewCart.php" method="GET">
 <p>Fleet of trained Fighter Pilots</p>
 <input type="checkbox" name="item[]" value="Alien Space Fleet">
 <p>Alien Repellent</p>
