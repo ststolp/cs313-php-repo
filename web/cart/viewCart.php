@@ -22,7 +22,7 @@
 <?php 
     echo "Items: ";
     foreach($_SESSION["cart"] as $value) {
-        echo "{$value} <button onclick='add('$value')'>Remove</button><br>";
+        echo "{$value}<button onclick='add('$value')'>Remove</button><br>";
     }
 ?>
 <a href="browse.php">Continue Shopping</a>
