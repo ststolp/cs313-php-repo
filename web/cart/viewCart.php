@@ -13,7 +13,7 @@
         $_SESSTION["some"] = $value;
         echo "{$value} <br>";
     }
-    print_r($_SESSION);
+    echo $_SEESION["some"];
 ?>
 <a href="browse.php">Continue Shopping</a>
 <a href="checkOut.php">Go to Checkout</a>
