@@ -30,6 +30,6 @@
 <button onclick="add('The Cold Virus')">Add to Cart</button>
 <p>Laser Cannon Security System</p>
 <button onclick="add('Laser Cannon Security System')">Add to Cart</button>
-<a href="checkOut.php">Proceed to checkOut</a>
+<a href="viewCart.php">View Cart</a>
 </body>
 </html>
