@@ -29,9 +29,9 @@
        }
     ?>
 <input type="submit">
-</div>
 </form>
 <a href="browse.php">Continue Shopping</a>
 <a href="checkOut.php">Go to Checkout</a>
+</div>
 </body>
 </html>

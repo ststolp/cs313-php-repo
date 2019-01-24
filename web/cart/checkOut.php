@@ -13,8 +13,8 @@
 <form action="confirm.php" method="post">
 <input type="text" name="address">
 <input type="submit">
-</div>
 <a href="viewCart.php">Return to Cart</a>
 <a href="confirm.php">Confirm Purchase</a>
+</div>
 </body>
 </html>
