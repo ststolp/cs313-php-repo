@@ -22,7 +22,7 @@
 <body>
 <?php include "header.php";  ?>
 <div class="content">
-<h1>Alien Attack Preparedness</h1>
+<h1>Store</h1>
 <p>Fleet of trained Fighter Pilots</p>
 <button onclick="add('Alien Space Fleet')">Add to Cart</button>
 <p>Alien Repellent</p>
