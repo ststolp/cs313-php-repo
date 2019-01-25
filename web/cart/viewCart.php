@@ -30,8 +30,9 @@
            echo "<b>{$value}</b>  Remove: <input type='checkbox' name='item[]' value='$value'><br>";
        }
     ?>
-<input class="button" type="submit">
+<br><input class="button" type="submit">
 </form>
+<a href="browse.php">Returen to Store</a>
 <a href="checkOut.php">Go to Checkout</a>
 </div>
 </body>
