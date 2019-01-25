@@ -19,7 +19,7 @@
 <p>Zip code</p>
 <input type="text" name="code">
 <p>Country</p>
-<input type="text" name="country">
+<input type="text" name="country"><br>
 <input class="button" type="submit"><br>
 <a href="viewCart.php">Return to Cart</a>
 </div>
