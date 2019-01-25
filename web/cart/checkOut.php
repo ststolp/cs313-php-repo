@@ -20,7 +20,7 @@
 <input type="text" name="code">
 <p>Country</p>
 <input type="text" name="country"><br><br>
-<input class="button" type="submit"><br>
+<input class="button" type="submit"><br><br>
 <a href="viewCart.php">Return to Cart</a>
 </div>
 </body>
