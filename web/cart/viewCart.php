@@ -25,7 +25,7 @@
 <h1>Your Cart</h1>
 <form action="add.php?page=viewCart" method="post">
    <?php 
-       echo "Items: ";
+       echo "Items: <br>";
        foreach($_SESSION["cart"] as $value) {
            echo "{$value}  Remove: <input type='checkbox' name='item[]' value='$value'><br>";
        }

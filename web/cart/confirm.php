@@ -17,9 +17,9 @@
     $_SESSION["city"] = htmlspecialchars($_POST["city"]);
     $_SESSION["code"] = htmlspecialchars($_POST["code"]);
     $_SESSION["country"] = htmlspecialchars($_POST["country"]);
-    echo "Order Information: <br> " . $_SESSION["address"] . 
-    $_SESSION["city"] . "<br>" . $_SESSION["code"] . "<br>" .
-    $_SESSION["code"] . "<br>" . $_SESSION["country"] . "<br>";
+    echo "<b>Order Information: </b><br> " . $_SESSION["address"] . "<br>" .
+    $_SESSION["city"] . "<br>" . $_SESSION["code"] . 
+    "<br>" . $_SESSION["country"] . "<br>";
     foreach($_SESSION["cart"] as $key=>$value) {
         echo "{$value} <br>";
     }
