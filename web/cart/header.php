@@ -1,3 +1,3 @@
 <?php
-echo "<div class='header'><h1>Alien Invasion Preparedness</h1></div>";
+echo "<div class='header'><h2>Alien Invasion Preparedness</h2></div>";
 ?>
