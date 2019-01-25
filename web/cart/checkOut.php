@@ -15,7 +15,6 @@
 <input type="text" name="address">
 <input type="submit"><br>
 <a href="viewCart.php">Return to Cart</a>
-<a href="confirm.php">Confirm Purchase</a>
 </div>
 </body>
 </html>

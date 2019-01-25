@@ -22,6 +22,7 @@
 <body>
 <?php  include "header.php";  ?>
 <div content="content">
+<h1>Your Cart</h1>
 <form action="add.php?page=viewCart" method="post">
    <?php 
        echo "Items: ";

@@ -9,8 +9,8 @@
 </head>
 <body>
 <?php include "header.php";  ?>
+<div class="content">
     <h1>Order Confirmation</h1>
-    <div class="content">
     <?php
     $address = htmlspecialchars($_POST["address"]);
     $_SESSION["address"] = $address;
