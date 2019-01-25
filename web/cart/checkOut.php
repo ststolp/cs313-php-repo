@@ -10,9 +10,16 @@
 <body>
 <?php include "header.php"; ?>
 <div class="content">
-<h1>Please enter your address</h1>
+<h1>Please enter your billing address</h1>
 <form action="confirm.php" method="post">
+<p>Street Address</p>
 <input type="text" name="address">
+<p>City</p>
+<input type="text" name="city">
+<p>Zip code</p>
+<input type="text" name="code">
+<p>Country</p>
+<input type="text" name="country">
 <input type="submit"><br>
 <a href="viewCart.php">Return to Cart</a>
 </div>
