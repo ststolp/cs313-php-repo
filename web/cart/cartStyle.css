@@ -1,5 +1,6 @@
 p {
     font-family: Helvetica;
+    color: rgb(53,53,53);
 }
 
 .content {
@@ -12,6 +13,13 @@ form {
 
 a {
     text-decoration-line: none;
+    color: rgb(77, 36, 224);
+    font-family: "Arial Narrow Bold";
+}
+
+h1 {
+    font-family: "Lucida Sans";
+    color: rgb(53, 53, 53);
 }
 
 .header {
@@ -20,6 +28,7 @@ a {
     color: white;
     padding: 3%;
     text-align: center;
+    font-family: "Verdana";
 }
 
 button {
