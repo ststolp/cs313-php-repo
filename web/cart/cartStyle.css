@@ -10,6 +10,10 @@ p {
     padding: 5%;
 }
 
+form {
+    padding: 5%;
+}
+
 a {
     text-decoration-line: none;
 }
