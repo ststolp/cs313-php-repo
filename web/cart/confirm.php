@@ -8,6 +8,7 @@
     <title>Confirm Order</title>
 </head>
 <body>
+<?php include "header.php";  ?>
     <h1>Order Confirmation</h1>
     <div class="content">
     <?php

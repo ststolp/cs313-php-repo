@@ -13,3 +13,9 @@ p {
 a {
     text-decoration-line: none;
 }
+
+.header {
+    background-color: rgb(0, 202, 204);
+    color: white;
+    padding: 5%;
+}

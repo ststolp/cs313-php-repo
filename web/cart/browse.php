@@ -20,6 +20,7 @@
         </script>
 </head>
 <body>
+<?php include "header.php";  ?>
 <div class="content">
 <h1>Alien Attack Preparedness</h1>
 <p>Fleet of trained Fighter Pilots</p>

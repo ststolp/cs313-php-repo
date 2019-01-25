@@ -20,6 +20,7 @@
     </script>
 </head>
 <body>
+<?php  include "header.php";  ?>
 <div content="content">
 <form action="add.php?page=viewCart" method="post">
    <?php 
