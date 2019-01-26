@@ -12,11 +12,17 @@ form {
 }
 
 a {
-    text-decoration-line: none;
-    color: rgb(77, 36, 224);
+    background-color: rgb(62, 83, 201);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 14px 25px;
     font-family: "Arial Narrow Bold";
     padding-left: 3%;
+    display: inline-block;
 }
+
+
 
 h1 {
     font-family: "Lucida Sans";
