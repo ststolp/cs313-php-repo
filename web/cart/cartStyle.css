@@ -5,6 +5,7 @@ p {
 
 .content {
     padding: 5%;
+    padding-left: 5%;
 }
 
 form {
@@ -18,7 +19,6 @@ a {
     text-align: center;
     padding: 10px 20px;
     font-family: "Arial Narrow Bold";
-    padding-left: 3%;
     display: inline-block;
 }
 
