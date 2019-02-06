@@ -29,7 +29,7 @@ echo "<h1>Scripture Resources</h1>";
 
    foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row) 
    {
-       echo "<p><b>" . $row['book'] . $row['chapter'] . ":" . $row['verse'] . "</b> - '" . $row['content'] . "'</p>";
+       echo "<p><b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</b> - " . $row['content'] . "</p>";
    }
    ?>
 </body>
