@@ -31,5 +31,6 @@ catch (PDOException $ex)
    {
        echo "<p><b>$row['book'] $row['chapter']:$row['verse']</b> - '$row['content']'</p>";
    }
+   ?>
 </body>
 </html>
