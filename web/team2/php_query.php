@@ -13,7 +13,7 @@
   $dbPort = $dbOpts["port"];
   $dbUser = $dbOpts["user"];
   $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
+  $dbName = 'scripture_db';
 
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 

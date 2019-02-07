@@ -1,3 +1,8 @@
+
+CREATE DATABASE scripture_db;
+
+\c scripture_db
+
 CREATE TABLE scripture
 (
     id SERIAL PRIMARY KEY
