@@ -1,10 +1,10 @@
 CREATE TABLE genre (
-	genre_id int PRIMARY KEY,
+	genre_id SERIAL PRIMARY KEY,
 	genre VARCHAR(255)
 );
 
 CREATE TABLE author (
-	author_id int PRIMARY KEY,
+	author_id SERIAL PRIMARY KEY,
 	fname VARCHAR(255),
     lname VARCHAR(255),
 	genre_id int,
@@ -12,13 +12,13 @@ CREATE TABLE author (
 );
 
 CREATE TABLE patron (
-	patron_id  int PRIMARY KEY,
+	patron_id SERIAL PRIMARY KEY,
 	fname VARCHAR(255),
     lname VARCHAR(255)
 );
 
 CREATE TABLE books (
-	book_id int PRIMARY KEY,
+	book_id SERIAL PRIMARY KEY,
 	title VARCHAR(255),
 	author_id int,
     patron_id int,
@@ -29,176 +29,154 @@ CREATE TABLE books (
     FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
 );
 
-CREATE SEQUENCE seq_patron
-MINVALUE 1
-START WITH 1
-INCREMENT BY 1
-CACHE 10;
+--INSERT INTO patron (fname, lname) 
+--VALUES ("The", "Librarian");
 
-INSERT INTO patron (patron_id, fname, lname)
-VALUES (seq_patron.curval, "Mr." "Librarian");
+--INSERT INTO genre ( genre)
+--VALUES ('Action');
 
-CREATE SEQUENCE seq_genre
-MINVALUE 1
-START WITH 1
-INCREMENT BY 1
-CACHE 10;
+--INSERT INTO author (fname, lname, genre_id)
+--VALUES ('Suzanne', 'Collins', 1);
+--INSERT INTO books (title, author_id,
+--patron_id, due_date, year, publisher)
+--VALUES ('The Hunger Games', 1, 1
+--, LOCALTIMESTAMP(2) + interval '30' day, '2008-10-10 10:10:10', 'Scholastic');
 
-CREATE SEQUENCE seq_author
-MINVALUE 1
-START WITH 1
-INCREMENT BY 1
-CACHE 10;
-
-CREATE SEQUENCE seq_books
-MINVALUE 1
-START WITH 1
-INCREMENT BY 1
-CACHE 10;
-
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.curval, "Action");
-
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.curval, "Suzanne", "Collins", seq_genre.curval);
-
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.curval, "The Hunger Games", seq_author.curval, 1
-, TIMESTAMP + 30, 2008, "Scholastic");
+VALUES ( 'Catching Fire', 1, 1
+, LOCALTIMESTAMP(2) + interval '30' day, '2009-10-10 10:10:10', 'Scholastic');
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Catching Fire", seq_author.curval, 1
-, TIMESTAMP + 30, 2009, "Scholastic");
+VALUES ('Mockingjay', 1, 1
+, LOCALTIMESTAMP(2) + interval '30' day, '2010-10-10 10:10:10', 'Scholastic');
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO author (fname, lname, genre_id)
+VALUES ( 'Classandra', 'Clare', 1);
+
+INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Mockingjay", seq_author.curval, 1
-, TIMESTAMP + 30, 2010, "Scholastic");
+VALUES ( 'City of Bones', 2, 1
+, LOCALTIMESTAMP(2) + interval '30' day, '2007-10-10 10:10:10', 'Margaret K. McElderry');
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Classandra", "Clare", seq_genre.curval);
+INSERT INTO author (fname, lname, genre_id)
+VALUES ('Clive', 'Cluster', 1);
 
-INSERT INTO books (book_id, title, author_id,
-patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "City of Bones", seq_author.curval, 1
-, TIMESTAMP + 30, 2007, "Margaret K. McElderry");
-
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Clive", "Cluster", seq_genre.curval);
-
-INSERT INTO books (book_id, title, author_id
+INSERT INTO books (title, author_id
 , patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Sahara", seq_author.curval, 1
-, TIMESTAMP + 30, 1992, "Simon & Schuster");
+VALUES ('Sahara', 3, 1
+, LOCALTIMESTAMP(2) + interval '30' day, '1992-10-10 10:10:10', 'Simon & Schuster');
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Cooking");
+-------------------------------------------------------------------------------------
+--not inserted    .
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Shizuo", "Tsuji", seq_genre.curval);
+INSERT INTO genre (genre)
+VALUES ("Cooking");
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO author (fname, lname, genre_id)
+VALUES ( "Shizuo", "Tsuji", 2);
+
+INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Japanese Cooking: A Simple Art", seq_author.curval, 1
+VALUES ("Japanese Cooking: A Simple Art", 4, 1
 , TIMESTAMP + 30, 2006, "Kodansha International");
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Practical Japanese Cooking Easy and Elegant", seq_author.curval, 1
+VALUES ("Practical Japanese Cooking Easy and Elegant", 4, 1
 , TIMESTAMP + 30, 1986, "Kodansha International");
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Nancy", "Hachisu", seq_genre.curval);
+INSERT INTO author ( fname, lname, genre_id)
+VALUES ("Nancy", "Hachisu", 2);
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Japan: The Cookbook", seq_author.curval, 1
+VALUES ("Japan: The Cookbook", 5, 1
 , TIMESTAMP + 30, 2018, "Phaidon Press");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Adventure");
+INSERT INTO genre ( genre)
+VALUES ( "Adventure");
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Robert Louis", "Stevenson", seq_genre.curval);
+INSERT INTO author (fname, lname, genre_id)
+VALUES ("Robert Louis", "Stevenson", 3);
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Treasure Island", seq_author.curval, 1
+VALUES ("Treasure Island", 6, 1
 , TIMESTAMP + 30, 1883, "Cassell and Company");
 
 
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Biography");
+INSERT INTO genre ( genre)
+VALUES ("Biography");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Comedy");
+INSERT INTO genre ( genre)
+VALUES ("Comedy");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Cooking");
+INSERT INTO genre ( genre)
+VALUES ( "Cooking");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Fantasy");
+INSERT INTO genre ( genre)
+VALUES ("Fantasy");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Fitness");
+INSERT INTO genre ( genre)
+VALUES ( "Fitness");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Historical");
+INSERT INTO genre ( genre)
+VALUES ( "Historical");
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Walter", "Scott", seq_genre.curval);
+INSERT INTO author ( fname, lname, genre_id)
+VALUES ( "Walter", "Scott", 9);
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Ivanhoe", seq_author.curval, 1
+VALUES ( "Ivanhoe", 7, 1
 , TIMESTAMP + 30, 1820, "Hurst, Robinson, and Co.");
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Victor", "Hugo", seq_genre.curval);
+INSERT INTO author (fname, lname, genre_id)
+VALUES ( "Victor", "Hugo", 9);
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "The Hunchback of Notre-Dame", seq_author.curval, 1
+VALUES ( "The Hunchback of Notre-Dame", 8, 1
 , TIMESTAMP + 30, 1833, "Gosselin");
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "Les Miserables", seq_author.curval, 1
+VALUES ("Les Miserables", 8, 1
 , TIMESTAMP + 30, 1862, "A. Lacroix, Verboeckhoven & Cie");
 
-INSERT INTO author (author_id, fname, lname, genre_id)
-VALUES (seq_author.nextval, "Leo", "Tolstoy", seq_genre.curval);
+INSERT INTO author (fname, lname, genre_id)
+VALUES (seq_author.nextval, "Leo", "Tolstoy", 10);
 
-INSERT INTO books (book_id, title, author_id,
+INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES (seq_books.nextval, "War and Peace", seq_author.curval, 1
+VALUES ( "War and Peace", 9, 1
 , TIMESTAMP + 30, 1869, "Thre Russian Messanger");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Horror");
+INSERT INTO genre ( genre)
+VALUES ( "Horror");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Mystery");
+INSERT INTO genre ( genre)
+VALUES ( "Mystery");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Philosophy");
+INSERT INTO genre ( genre)
+VALUES ( "Philosophy");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Political");
+INSERT INTO genre ( genre)
+VALUES ( "Political");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Romance");
+INSERT INTO genre ( genre)
+VALUES ( "Romance");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Science Fiction");
+INSERT INTO genre ( genre)
+VALUES ("Science Fiction");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Western");
+INSERT INTO genre (genre)
+VALUES ( "Western");
 
-INSERT INTO genre (genre_id, genre)
-VALUES (seq_genre.nextval, "Literary");
+INSERT INTO genre ( genre)
+VALUES ("Literary");
 
 

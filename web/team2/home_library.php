@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
+<title>Library</title>
 </head>
 <body>
 <?php
-   try
+try
 {
   $dbUrl = getenv('DATABASE_URL');
 
@@ -25,11 +26,13 @@ catch (PDOException $ex)
   die();
 }
 
-echo "<h1>Scripture Resources</h1>";
+echo "<h1></h1>";
 
-   foreach ($db->query('SELECT book, chapter, verse, content FROM scripture') as $row) 
+   foreach ($db->query('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+   INNER JOIN author a ON b.author_id = a.author_id') as $row) 
    {
-       echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - ' . $row['content'] . '</p>';
+       echo '<p><b>' . $row['b.title'] . ' by ' . $row['a.fname'] . ' ' . $row['a.lname'] . 
+       ' ' . $row['b.publisher'] . ', ' . $row['b.year'] . '</p>';
    }
 ?>
 </body>
