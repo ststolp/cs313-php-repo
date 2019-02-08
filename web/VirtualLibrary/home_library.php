@@ -26,7 +26,7 @@ catch (PDOException $ex)
   die();
 }
 
-echo "<h1></h1>";
+echo "<h1>Library</h1>";
 
    foreach ($db->query('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
    INNER JOIN author a ON b.author_id = a.author_id') as $row) 
