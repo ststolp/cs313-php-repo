@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<head>
-<title>Library</title>
-</head>
-<body>
 <?php
+session_start();
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -19,21 +15,22 @@ try
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $_SESSION['db'] = $db;
 }
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
-echo "<h1>Library</h1>";
-
-   foreach ($db->query('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
-   INNER JOIN author a ON b.author_id = a.author_id') as $row) 
-   {
-       echo '<p><b>' . $row['b.title'] . ' by ' . $row['a.fname'] . ' ' . $row['a.lname'] . 
-       ' ' . $row['b.publisher'] . ', ' . $row['b.year'] . '</p>';
-   }
 ?>
+<!DOCTYPE html>
+<head>
+<title>Library</title>
+</head>
+<body>
+<h1>Library</h1>
+<form action='library.php' method='get'>
+<input type="submit">
+</form>
 </body>
 </html>
