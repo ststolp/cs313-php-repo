@@ -9,13 +9,13 @@ session_start();
 
 <form action="insertScripture.php" method="post">
     <label>Book</label>
-    <input type="text" name="Book">
+    <input type="text" name="Book"></input>
     <label>Chapter</label>
-    <input type="text" name="Chapter">
+    <input type="text" name="Chapter"></input> 
     <label>Verse</label>
-    <input type="text" name="Verse">
+    <input type="text" name="Verse"></input>
     <label>Contents</label>
-    <input type="textarea" name="Contents">
+    <textarea row="4" col="50" name="Contents"></textarea>
 
 <?php
 //echo "<label>Faith</label";
@@ -50,7 +50,7 @@ foreach ($db->query('SELECT topic FROM topic') as $row)
   echo "<input type='checkbox' name='topic' value='" . $row['id'] . "'>";
 }
 ?>
-<input type="submit" value="Submit">
+<input type="submit" value="Submit"/>
 </form>
 </body>
 </html>
