@@ -9,14 +9,14 @@ session_start();
 
 <form action="insertScripture.php" method="post">
     <label>Book</label>
-    <input type="text" name="Book"></input>
+    <input type="text" name="Book"/>
     <label>Chapter</label>
-    <input type="text" name="Chapter"></input> 
+    <input type="text" name="Chapter"/>
     <label>Verse</label>
-    <input type="text" name="Verse"></input>
+    <input type="text" name="Verse"/>
     <label>Contents</label>
     <textarea row="4" col="50" name="Contents"></textarea>
-
+    <input type="submit" value="Submit"/>
 <?php
 //echo "<label>Faith</label";
 //echo "<input type='checkbox' name='topic' value='Faith'>";
