@@ -39,15 +39,17 @@ session_start();
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $_SESSION['db'] = $db;
 }
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+
 
 foreach ($db->query('SELECT topic FROM topic') as $row)
 {
   echo "<input type='checkbox' name='topic' value='" . $row['id'] . "'>";
+}
+
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
 }
 ?>
 <input type="submit" value="Submit"/>
