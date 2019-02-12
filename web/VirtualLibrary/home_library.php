@@ -1,7 +1,6 @@
 <?php
 session_start();
-try
-{
+
   $dbUrl = getenv('DATABASE_URL');
 
   $dbOpts = parse_url($dbUrl);
@@ -16,12 +15,7 @@ try
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $_SESSION['db'] = $db;
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+
 ?>
 <!DOCTYPE html>
 <head>

@@ -7,6 +7,8 @@ sesstion_start();
 <body>
 <h1>The Library</h1>
 <?php
+try 
+{
 $db = $_SESSION['db'];
    $statement = $db->query('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
    INNER JOIN author a ON b.author_id = a.author_id');
@@ -15,6 +17,12 @@ $db = $_SESSION['db'];
       echo '<p><b>' . $row['b.title'] . ' by ' . $row['a.fname'] . ' ' . $row['a.lname'] . 
        ' ' . $row['b.publisher'] . ', ' . $row['b.year'] . '</p>'; 
    }
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
 ?>
 </body>
 </html>
