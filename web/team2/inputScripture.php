@@ -6,15 +6,16 @@ session_start();
 <head>
 </head>
 <body>
+
 <form action="insertScripture.php" method="post">
-<label>Book</label>
-<input type="text" name="Book">
-<label>Chapter</label>
-<input type="text" name="Chapter">
-<label>Verse</label>
-<input type="text" name="Verse">
-<label>Contents</label>
-<input type="textarea" name="Contents">
+    <label>Book</label>
+    <input type="text" name="Book">
+    <label>Chapter</label>
+    <input type="text" name="Chapter">
+    <label>Verse</label>
+    <input type="text" name="Verse">
+    <label>Contents</label>
+    <input type="textarea" name="Contents">
 
 <?php
 //echo "<label>Faith</label";
@@ -49,7 +50,7 @@ foreach ($db->query('SELECT topic FROM topic') as $row)
   echo "<input type='checkbox' name='topic' value='" . $row['id'] . "'>";
 }
 ?>
-<input type="submit">
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
