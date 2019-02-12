@@ -45,3 +45,25 @@ VALUES
     , 9
     , 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.'
 );
+
+CREATE TABLE topic
+(
+    id SERIAL PRIMARY KEY
+    , topic VARCHAR(50)
+);
+
+INSERT INTO topic (topic) 
+VALUES ('Faith');
+
+INSERT INTO topic (topic) 
+VALUES ('Charity');
+
+INSERT INTO topic (topic) 
+VALUES ('Prayer');
+
+        
+CREATE TABLE scripture_topic
+(
+    scripture_id INT,
+    topic_id INT
+);
