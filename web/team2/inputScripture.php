@@ -33,7 +33,7 @@ session_start();
   $dbUser = $dbOpts["user"];
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"],'/');
-  echo "Database name: " . $dbName";
+  echo 'Database name: ' . $dbName;
 
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
