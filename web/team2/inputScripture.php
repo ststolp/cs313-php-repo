@@ -40,7 +40,7 @@ session_start();
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $_SESSION['db'] = $db;
-
+}
 
 
 //foreach ($db->query('SELECT topic FROM topic') as $row)
