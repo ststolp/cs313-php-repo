@@ -43,11 +43,11 @@ session_start();
 
 
 
-foreach ($db->query('SELECT topic FROM topic') as $row)
-{
-  echo "<input type='checkbox' name='topic' value='" . $row['id'] . "'>";
-}
-}
+//foreach ($db->query('SELECT topic FROM topic') as $row)
+//{
+//  echo "<input type='checkbox' name='topic' value='" . $row['id'] . "'>";
+//}
+//}
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
