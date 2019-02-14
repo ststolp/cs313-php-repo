@@ -31,7 +31,7 @@ session_start();
   $dbHost = $dbOpts["host"];
   $dbPort = $dbOpts["port"];
   $dbUser = $dbOpts["user"];
-  echo "<p>$dbUser</p>"
+  echo "<p>$dbUser</p>";
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"],'/');
   echo 'Database name: ' . $dbName;
