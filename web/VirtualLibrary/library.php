@@ -1,5 +1,6 @@
 <?php
-sesstion_start();
+require_once("dbConnect.php");
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <head>
@@ -9,9 +10,11 @@ sesstion_start();
 <?php
 try 
 {
-$db = $_SESSION['db'];
-   $statement = $db->query('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+
+   $statement = $db->prepare('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
    INNER JOIN author a ON b.author_id = a.author_id');
+   $statement->execute();
+   
    while ($row = $statement->fetch(PDO:FETCH_ASSOC))
    {
       echo '<p><b>' . $row['b.title'] . ' by ' . $row['a.fname'] . ' ' . $row['a.lname'] . 
