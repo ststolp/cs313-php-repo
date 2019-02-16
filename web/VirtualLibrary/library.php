@@ -33,15 +33,19 @@ $db = NULL;
 <?php
 try 
 {
-
-   $statement = $db->prepare('SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
-   INNER JOIN author a ON b.author_id = a.author_id');
+   $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+   INNER JOIN author a ON b.author_id = a.author_id";
+   $statement = $db->prepare($query);
    $statement->execute();
 
    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
    {
-      echo '<p><b>' . $row['b.title'] . ' by ' . $row['a.fname'] . ' ' . $row['a.lname'] . 
-       ' ' . $row['b.publisher'] . ', ' . $row['b.year'] . '</p>'; 
+	   $title = $row['b.title'];
+	   $fname = $row['a.fname'];
+	   $lname = $row['a.lname'];
+	   $publisher = $row['b.publisher'];
+	   $year = $row['b.year'];
+      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
    }
 }
 catch (PDOException $ex)
