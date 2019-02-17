@@ -34,95 +34,65 @@ $db = NULL;
 try 
 {
 
-	$query = "INSERT INTO patron (fname, lname) 
-VALUES ('The', 'Librarian')";
+// 	$query = "INSERT INTO patron (fname, lname) 
+// VALUES ('The', 'Librarian')";
 
-$query2 = "INSERT INTO genre ( genre)
-VALUES ('Action')";
+// $query2 = "INSERT INTO genre ( genre)
+// VALUES ('Action')";
 
-$query3 = "INSERT INTO author (fname, lname, genre_id)
-VALUES ('Suzanne', 'Collins', (SELECT genre_id FROM genre WHERE genre = 'Action') )";
+// $query3 = "INSERT INTO author (fname, lname, genre_id)
+// VALUES ('Suzanne', 'Collins', (SELECT genre_id FROM genre WHERE genre = 'Action') )";
 
-$query4 = "INSERT INTO books (title, author_id,
-patron_id, due_date, year, publisher)
-VALUES ('The Hunger Games', (SELECT author_id FROM author WHERE lname = 'Collins'), 
-(SELECT patron_id FROM patron WHERE fname = 'The')
-, LOCALTIMESTAMP(2) + interval '30' day, '2008-10-10 10:10:10', 'Scholastic')";
+// $query4 = "INSERT INTO books (title, author_id,
+// patron_id, due_date, year, publisher)
+// VALUES ('The Hunger Games', (SELECT author_id FROM author WHERE lname = 'Collins'), 
+// (SELECT patron_id FROM patron WHERE fname = 'The')
+// , LOCALTIMESTAMP(2) + interval '30' day, '2008-10-10 10:10:10', 'Scholastic')";
 
-$query5 = "INSERT INTO books ( title, author_id,
-patron_id, due_date, year, publisher)
-VALUES ( 'Catching Fire', (SELECT author_id FROM author WHERE lname = 'Collins')
-, (SELECT patron_id FROM patron WHERE fname = 'The')
-, LOCALTIMESTAMP(2) + interval '30' day, '2009-10-10 10:10:10', 'Scholastic')";
+// $query5 = "INSERT INTO books ( title, author_id,
+// patron_id, due_date, year, publisher)
+// VALUES ( 'Catching Fire', (SELECT author_id FROM author WHERE lname = 'Collins')
+// , (SELECT patron_id FROM patron WHERE fname = 'The')
+// , LOCALTIMESTAMP(2) + interval '30' day, '2009-10-10 10:10:10', 'Scholastic')";
 
-$query6 = "INSERT INTO books (title, author_id,
-patron_id, due_date, year, publisher)
-VALUES ('Mockingjay', (SELECT author_id FROM author WHERE lname = 'Collins')
-, (SELECT patron_id FROM patron WHERE fname = 'The')
-, LOCALTIMESTAMP(2) + interval '30' day, '2010-10-10 10:10:10', 'Scholastic')";
+// $query6 = "INSERT INTO books (title, author_id,
+// patron_id, due_date, year, publisher)
+// VALUES ('Mockingjay', (SELECT author_id FROM author WHERE lname = 'Collins')
+// , (SELECT patron_id FROM patron WHERE fname = 'The')
+// , LOCALTIMESTAMP(2) + interval '30' day, '2010-10-10 10:10:10', 'Scholastic')";
 
-$query7 = "INSERT INTO author (fname, lname, genre_id)
-VALUES ( 'Classandra', 'Clare', (SELECT genre_id FROM genre WHERE genre = 'Action'))";
+// $query7 = "INSERT INTO author (fname, lname, genre_id)
+// VALUES ( 'Classandra', 'Clare', (SELECT genre_id FROM genre WHERE genre = 'Action'))";
 
-$query8 = "INSERT INTO books (title, author_id,
-patron_id, due_date, year, publisher)
-VALUES ( 'City of Bones', (SELECT author_id FROM author WHERE fname = 'Classandra'),
- (SELECT patron_id FROM patron WHERE fname = 'The')
-, LOCALTIMESTAMP(2) + interval '30' day, '2007-10-10 10:10:10', 'Margaret K. McElderry')";
+// $query8 = "INSERT INTO books (title, author_id,
+// patron_id, due_date, year, publisher)
+// VALUES ( 'City of Bones', (SELECT author_id FROM author WHERE fname = 'Classandra'),
+//  (SELECT patron_id FROM patron WHERE fname = 'The')
+// , LOCALTIMESTAMP(2) + interval '30' day, '2007-10-10 10:10:10', 'Margaret K. McElderry')";
 
-$query9 = "INSERT INTO author (fname, lname, genre_id)
-VALUES ('Clive', 'Cluster', (SELECT genre_id FROM genre WHERE genre = 'Action'))";
+// $query9 = "INSERT INTO author (fname, lname, genre_id)
+// VALUES ('Clive', 'Cluster', (SELECT genre_id FROM genre WHERE genre = 'Action'))";
 
-$query10 = "INSERT INTO books (title, author_id
-, patron_id, due_date, year, publisher)
-VALUES ('Sahara', (SELECT author_id FROM author WHERE fname = 'Clive')
-, (SELECT patron_id FROM patron WHERE fname = 'The')
-, LOCALTIMESTAMP(2) + interval '30' day, '1992-10-10 10:10:10', 'Simon & Schuster')";
+// $query10 = "INSERT INTO books (title, author_id
+// , patron_id, due_date, year, publisher)
+// VALUES ('Sahara', (SELECT author_id FROM author WHERE fname = 'Clive')
+// , (SELECT patron_id FROM patron WHERE fname = 'The')
+// , LOCALTIMESTAMP(2) + interval '30' day, '1992-10-10 10:10:10', 'Simon & Schuster')";
 
-   //$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
-   //INNER JOIN author a ON b.author_id = a.author_id";
-   //$statement = $db->prepare($query);
-    $statement = $db->prepare($query);
+   $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+   INNER JOIN author a ON b.author_id = a.author_id";
+   $statement = $db->prepare($query);
    $statement->execute();
-   $statement2 = $db->prepare($query2);
-   $statement2->execute();
 
-    $statement3 = $db->prepare($query3);
-   $statement3->execute();
-
-    $statement4 = $db->prepare($query4);
-   $statement4->execute();
-
-    $statement5 = $db->prepare($query5);
-   $statement5->execute();
-
-    $statement6 = $db->prepare($query6);
-   $statement6->execute();
-
-    $statement7 = $db->prepare($query7);
-   $statement7->execute();
-
-    $statement8 = $db->prepare($query8);
-   $statement8->execute();
-
-    $statement9 = $db->prepare($query9);
-   $statement9->execute();
-
-    $statement10 = $db->prepare($query10);
-   $statement10->execute();
-
-   
-   //$statement->execute();
-
-//   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
- //  {
-//	   $title = $row['b.title'];
-//	   $fname = $row['a.fname'];
-//	   $lname = $row['a.lname'];
-//	   $publisher = $row['b.publisher'];
-//	   $year = $row['b.year'];
-//      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
-//   }
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+  {
+	   $title = $row['b.title'];
+	   $fname = $row['a.fname'];
+	   $lname = $row['a.lname'];
+	   $publisher = $row['b.publisher'];
+	   $year = $row['b.year'];
+     echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
+  }
 }
 catch (PDOException $ex)
 {
