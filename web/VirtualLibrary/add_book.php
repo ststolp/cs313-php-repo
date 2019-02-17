@@ -54,7 +54,7 @@ if ($fname != "") {
       $statement->execute();
       
       $query = "SELECT author_id FROM author WHERE 
-      lname = '$lame'";
+  fname = '$fname' AND lname = '$lname'";
       $statement = $db->prepare($query);
       $statement->execute();
       $author_id_array = $statement->fetch(PDO::FETCH_ASSOC);
