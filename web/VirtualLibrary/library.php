@@ -111,12 +111,13 @@ $db = get_db();
 	  {
 		  $genre = $row['genre'];
 		  $genre_id = $row['genre_id'];
+		  echo "<h2>Genre</h2>";
 		  echo "<label>$genre</label>";
 		  echo "<input type='radio' name='genre_id' value='$genre_id'><br>";
 	  }
 	  ?>
       <label>Other Genre</label>
-        <input type="text" name="new_genre" value="">
+        <input type="text" name="new_genre" value=""><br>
 
 	  <?php
 	  try 
@@ -129,6 +130,7 @@ $db = get_db();
 			  $fname = $row['fname'];
 			  $lname = $row['lname'];
 					 $author_id = $row['author_id'];
+					 echo "<h2>Author</h2>";
 					 echo "<label>$fname $lname</label>";
 			  echo "<input type='radio' name='author' value='$author_id'><br>";
 		  }

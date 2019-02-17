@@ -37,7 +37,7 @@ if ($new_genre != "") {
     $statement_new_genre->execute();
 
       $query = "SELECT genre_id FROM genre WHERE 
-      genre = '$new_genre'";
+      genre = $new_genre";
       $statement = $db->prepare($query);
       $statement->execute();
       $genre_id_array = $statement->fetch(PDO::FETCH_ASSOC);
@@ -54,7 +54,7 @@ if ($fname != "") {
       $statement->execute();
       
       $query = "SELECT author_id FROM author WHERE 
-      fname = '$fname' AND lname = '$lame'";
+      fname = $fname AND lname = $lame";
       $statement = $db->prepare($query);
       $statement->execute();
       $author_id_array = $statement->fetch(PDO::FETCH_ASSOC);
