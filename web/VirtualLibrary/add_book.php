@@ -26,7 +26,7 @@ $lname = $_POST['lname'];
 $year = $_POST['year'];
 $publisher = $_POST['publisher'];
 $author_id = $_POST['author'];
-$genre = $_POST['genre'];
+$genre_id = $_POST['genre_id'];
 $new_genre = $_POST['new_genre'];
 
 if ($new_genre != "") {
@@ -50,7 +50,7 @@ if ($fname != "") {
     $statement = $db->prepare($query);
     $statement->bindValue(':fname', $fname);
      $statement->bindValue(':lname', $lname);
-      $statement->bindValue(':genre_id', $genre);
+      $statement->bindValue(':genre_id', $genre_id);
       $statement->execute();
       
       $query = "SELECT author_id FROM author WHERE 
@@ -68,7 +68,7 @@ if ($fname != "") {
     $statement->bindValue(':title', $title);
 	$statement->bindValue(':author_id', $author_id);
    // $statement->bindValue(':patron_id', );
-    $statement->bindValue(':due_date', "LOCALTIMESTAMP(2)");
+    $statement->bindValue(':due_date', LOCALTIMESTAMP(2));
     $statement->bindValue(':year', $year);
     $statement->bindValue(':publisher', $publisher);
 
