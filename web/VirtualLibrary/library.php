@@ -91,12 +91,13 @@ $db = get_db();
 	   $lname = $row['lname'];
 	   $publisher = $row['publisher'];
 	   $year = $row['year'];
-     echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
+     echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>"; 
   }
 
 
 ?>
-
+<br>
+<h2>Add a Book</h2>
 <form action="add_book.php" method="post">
 	<label>Title</label>
 	<input type="text" name="title"><br>
