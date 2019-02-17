@@ -16,7 +16,7 @@ $db = NULL;
 		// Create the PDO connection
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-	}
+	
 	// catch (PDOException $ex) {
 	// 	// If this were in production, you would not want to echo
 	// 	// the details of the exception.
@@ -131,12 +131,12 @@ try
 					 echo "<label>$fname $lname</label>";
 			  echo "<input type='radio' name='author' value='$author_id'><br>";
 		  }
-		}
-		  catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+	}
+	catch (PDOException $ex)
+	{
+       echo 'Error!: ' . $ex->getMessage();
+       die();
+     }
  ?>
 	<label>Other Author</label>
 	<input type="text" name="fname" value="">
