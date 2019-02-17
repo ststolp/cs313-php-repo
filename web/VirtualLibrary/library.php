@@ -94,11 +94,7 @@ try
      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
   }
 }
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+
 ?>
 
 <form action="add_book.php" method="post">
@@ -133,6 +129,11 @@ catch (PDOException $ex)
 					 echo "<label>$fname $lname</label>";
 			  echo "<input type='radio' name='author' value='$author_id'><br>";
 		  }
+		  catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
  ?>
 	<label>Other Author</label>
 	<input type="text" name="fname" value="">
