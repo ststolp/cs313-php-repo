@@ -57,7 +57,8 @@ if ($fname != "") {
       fname = '$fname' AND lname = '$lame'";
       $statement = $db->prepare($query);
       $statement->execute();
-      $author_id = $statement->fetch(PDO::FETCH_ASSOC);
+      $author_id_array = $statement->fetch(PDO::FETCH_ASSOC);
+      $author_id = $author_id_array['author_id'];
 }
 
 
@@ -66,7 +67,7 @@ if ($fname != "") {
     $statement = $db->prepare($query);
 
     $statement->bindValue(':title', $title);
-	$statement->bindValue(':author_id', $author_id['author_id']);
+	$statement->bindValue(':author_id', $author_id);
    // $statement->bindValue(':patron_id', );
     //$statement->bindValue(':due_date', 2000);
     $statement->bindValue(':year', $date);
