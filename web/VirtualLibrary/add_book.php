@@ -68,7 +68,7 @@ if ($fname != "") {
     $statement->bindValue(':title', $title);
 	$statement->bindValue(':author_id', $author_id);
    // $statement->bindValue(':patron_id', );
-    $statement->bindValue(':due_date', 2000-10-10);
+    $statement->bindValue(':due_date', 2000);
     $statement->bindValue(':year', $date);
     $statement->bindValue(':publisher', $publisher);
 
