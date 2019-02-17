@@ -37,7 +37,7 @@ try
 	$query2 = "CREATE TABLE genre (
 	genre_id SERIAL PRIMARY KEY,
 	genre VARCHAR(255)
-);
+)
 
 CREATE TABLE author (
 	author_id SERIAL PRIMARY KEY,
@@ -45,13 +45,13 @@ CREATE TABLE author (
     lname VARCHAR(255),
 	genre_id int,
 	FOREIGN KEY (genre_id) REFERENCES genre(genre_id)
-)
+);
 
 CREATE TABLE patron (
 	patron_id SERIAL PRIMARY KEY,
 	fname VARCHAR(255),
     lname VARCHAR(255)
-)
+);
 
 CREATE TABLE books (
 	book_id SERIAL PRIMARY KEY,
