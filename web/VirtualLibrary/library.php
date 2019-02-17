@@ -1,7 +1,7 @@
 <?php
 //require_once("../dbConnect.php");
 $db = NULL;
-	try {
+	//try {
 		$dbUrl = getenv('DATABASE_URL');
 		if (!isset($dbUrl) || empty($dbUrl)) {
 
@@ -17,12 +17,12 @@ $db = NULL;
 		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
-	catch (PDOException $ex) {
-		// If this were in production, you would not want to echo
-		// the details of the exception.
-		echo "Error connecting to DB. Details: $ex";
-		die();
-	}
+	// catch (PDOException $ex) {
+	// 	// If this were in production, you would not want to echo
+	// 	// the details of the exception.
+	// 	echo "Error connecting to DB. Details: $ex";
+	// 	die();
+	// }
 	//$db = get_db();
 ?>
 <!DOCTYPE html>
@@ -118,6 +118,8 @@ try
         <input type="text" name="new_genre" value="">
 
 	  <?php
+	  try 
+	{
 		  $statement2 = $db->prepare('SELECT author_id, fname, lname FROM author');
 		  $statement2->execute();
 
@@ -129,6 +131,7 @@ try
 					 echo "<label>$fname $lname</label>";
 			  echo "<input type='radio' name='author' value='$author_id'><br>";
 		  }
+		}
 		  catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
