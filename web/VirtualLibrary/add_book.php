@@ -40,8 +40,8 @@ if ($new_genre != "") {
       genre = '$new_genre'";
       $statement = $db->prepare($query);
       $statement->execute();
-      $genre_id = $statement->fetch(PDO::FETCH_ASSOC);
-    $genre = $genre_id['genre_id'];
+      $genre_id_array = $statement->fetch(PDO::FETCH_ASSOC);
+    $genre_id = $genre_id_array['genre_id'];
 }
 
 if ($fname != "") {
