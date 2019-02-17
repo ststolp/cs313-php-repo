@@ -41,7 +41,7 @@ if ($new_genre != "") {
       $statement = $db->prepare($query);
       $statement->execute();
       $genre_id = $statement->fetch(PDO::FETCH_ASSOC);
-    $genre = $genre_id;
+    $genre = $genre_id['genre_id'];
 }
 
 if ($fname != "") {
@@ -66,7 +66,7 @@ if ($fname != "") {
     $statement = $db->prepare($query);
 
     $statement->bindValue(':title', $title);
-	$statement->bindValue(':author_id', $author_id);
+	$statement->bindValue(':author_id', $author_id['author_id']);
    // $statement->bindValue(':patron_id', );
     //$statement->bindValue(':due_date', 2000);
     $statement->bindValue(':year', $date);
