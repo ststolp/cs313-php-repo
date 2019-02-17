@@ -23,7 +23,7 @@ $db = get_db();
 $title = $_POST['title'];
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
-$year = $_POST['year'];
+$date = $_POST['year'];
 $publisher = $_POST['publisher'];
 $author_id = $_POST['author'];
 $genre_id = $_POST['genre_id'];
@@ -68,8 +68,8 @@ if ($fname != "") {
     $statement->bindValue(':title', $title);
 	$statement->bindValue(':author_id', $author_id);
    // $statement->bindValue(':patron_id', );
-    $statement->bindValue(':due_date', LOCALTIMESTAMP(2));
-    $statement->bindValue(':year', $year);
+    $statement->bindValue(':due_date', 2000-10-10);
+    $statement->bindValue(':year', $date);
     $statement->bindValue(':publisher', $publisher);
 
     $statement->execute();

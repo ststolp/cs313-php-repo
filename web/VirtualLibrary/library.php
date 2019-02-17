@@ -1,21 +1,22 @@
 <?php
-//require_once("../dbConnect.php");
-$db = NULL;
-	//try {
-		$dbUrl = getenv('DATABASE_URL');
-		if (!isset($dbUrl) || empty($dbUrl)) {
+require_once("dbConnect.php");
 
-		}
-		// Get the various parts of the DB Connection from the URL
-		$dbopts = parse_url($dbUrl);
-		$dbHost = $dbopts["host"];
-		$dbPort = $dbopts["port"];
-		$dbUser = $dbopts["user"];
-		$dbPassword = $dbopts["pass"];
-		$dbName = ltrim($dbopts["path"],'/');
-		// Create the PDO connection
-		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+$db = get_db();
+	//try {
+		// $dbUrl = getenv('DATABASE_URL');
+		// if (!isset($dbUrl) || empty($dbUrl)) {
+
+		// }
+		// // Get the various parts of the DB Connection from the URL
+		// $dbopts = parse_url($dbUrl);
+		// $dbHost = $dbopts["host"];
+		// $dbPort = $dbopts["port"];
+		// $dbUser = $dbopts["user"];
+		// $dbPassword = $dbopts["pass"];
+		// $dbName = ltrim($dbopts["path"],'/');
+		// // Create the PDO connection
+		// $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		// $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	
 	// catch (PDOException $ex) {
 	// 	// If this were in production, you would not want to echo
@@ -110,7 +111,7 @@ $db = NULL;
 		  $genre = $row['genre'];
 		  $genre_id = $row['genre_id'];
 		  echo "<label>$genre</label>";
-		  echo "<input type='radio' name='genre' value='$genre_id'><br>";
+		  echo "<input type='radio' name='genre_id' value='$genre_id'><br>";
 	  }
 	  ?>
       <label>Other Genre</label>
@@ -141,7 +142,7 @@ $db = NULL;
 	<input type="text" name="fname" value="">
 	<input type="text" name="lname" value=""><br>
 	<label>year</label>
-	<input type="text" name="year"><br>
+	<input type="date" name="year"><br>
 	<label>Publisher</label>
 	<input type="text" name="publisher"><br>
 	<input type="submit" value="Add book">
