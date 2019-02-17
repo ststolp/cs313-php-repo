@@ -100,5 +100,49 @@ catch (PDOException $ex)
   die();
 }
 ?>
+
+<form action="add_book.php" method="post">
+	<label>Title</label>
+	<input type="text" name="title"><br>
+
+	<?php
+
+	  $genre_statement = $db-prepare('SELECT genre_id, genre FROM genre');
+	  $genre_statement->execute();
+
+	  while($row = $genre_statement->fetch(PDO::FETCH_ASSOC))
+	  {
+		  $genre = $row['genre'];
+		  $genre_id = $row['genre_id'];
+		  echo "<label>$genre</label>";
+		  echo "<input type='radio' name='genre' value='$genre_id'><br>";
+	  }
+	  ?>
+      <label>Other Genre</label>
+        <input type="text" name="new_genre" value="">
+
+	  <?php
+		  $statement2 = $db->prepare('SELECT author_id, fname, lname FROM author');
+		  $statement2->execute();
+
+		  while ($row = $statement2->fetch(PDO::FETCH_ASSOC))
+		  {
+			  $fname = $row['fname'];
+			  $lname = $row['lname'];
+					 $author_id = $row['author_id'];
+					 echo "<label>$fname $lname</label>";
+			  echo "<input type='radio' name='author' value='$author_id'><br>";
+		  }
+ ?>
+	<label>Other Author</label>
+	<input type="text" name="fname" value="">
+	<input type="text" name="lname" value=""><br>
+	<label>year</label>
+	<input type="text" name="year"><br>
+	<label>Publisher</label>
+	<input type="text" name="publisher"><br>
+	<input type="submit" value="Add book">
+	</form>
+	<label>
 </body>
 </html>
