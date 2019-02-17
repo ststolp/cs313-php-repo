@@ -102,7 +102,7 @@ $db = NULL;
 
 	<?php
 
-	  $genre_statement = $db-prepare('SELECT genre_id, genre FROM genre');
+	  $genre_statement = $db->prepare('SELECT genre_id, genre FROM genre');
 	  $genre_statement->execute();
 
 	  while($row = $genre_statement->fetch(PDO::FETCH_ASSOC))
