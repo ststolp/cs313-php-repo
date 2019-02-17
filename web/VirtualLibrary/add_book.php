@@ -1,21 +1,23 @@
 <?php
 try
 {
+require_once("dbConnect.php");
 
-  $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
-   INNER JOIN author a ON b.author_id = a.author_id";
-   $statement = $db->prepare($query);
-   $statement->execute();
+$db = get_db();
+//   $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+//    INNER JOIN author a ON b.author_id = a.author_id";
+//    $statement = $db->prepare($query);
+//    $statement->execute();
 
-  while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-  {
-	   $title = $row['b.title'];
-	   $fname = $row['a.fname'];
-	   $lname = $row['a.lname'];
-	   $publisher = $row['b.publisher'];
-	   $year = $row['b.year'];
-     echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
-  }
+//   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+//   {
+// 	   $title = $row['b.title'];
+// 	   $fname = $row['a.fname'];
+// 	   $lname = $row['a.lname'];
+// 	   $publisher = $row['b.publisher'];
+// 	   $year = $row['b.year'];
+//      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
+//   }
 
 
 $title = $_POST['title'];

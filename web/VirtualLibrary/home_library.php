@@ -9,7 +9,7 @@
 <body>
 <h1>Library</h1>
 <form action='library.php' method='get'>
-<input type="submit">
+<input type="submit" value="See Books">
 </form>
 </body>
 </html>
