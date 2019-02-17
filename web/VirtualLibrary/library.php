@@ -69,7 +69,7 @@ CREATE TABLE books (
    //INNER JOIN author a ON b.author_id = a.author_id";
    //$statement = $db->prepare($query);
    $statement2 = $db->prepare($query2);
-   $statement->execute();
+   $statement2->execute();
    //$statement->execute();
 
 //   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
