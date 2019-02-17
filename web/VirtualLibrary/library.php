@@ -37,7 +37,7 @@ try
 	$query2 = "CREATE TABLE genre (
 	genre_id SERIAL PRIMARY KEY,
 	genre VARCHAR(255)
-)
+);
 
 CREATE TABLE author (
 	author_id SERIAL PRIMARY KEY,
