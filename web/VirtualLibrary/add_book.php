@@ -45,12 +45,12 @@ if ($new_genre != "") {
 }
 
 if ($fname != "") {
-    $query = "INSERT INTO author (fname, lname, genre) 
-    VALUES (:fname, :lname, :genre)";
+    $query = "INSERT INTO author (fname, lname, genre_id) 
+    VALUES (:fname, :lname, :genre_id)";
     $statement = $db->prepare($query);
     $statement->bindValue(':fname', $fname);
      $statement->bindValue(':lname', $lname);
-      $statement->bindValue(':genre', $genre);
+      $statement->bindValue(':genre_id', $genre);
       $statement->execute();
       
       $query = "SELECT author_id FROM author WHERE 
