@@ -33,21 +33,55 @@ $db = NULL;
 <?php
 try 
 {
-   $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
-   INNER JOIN author a ON b.author_id = a.author_id";
-   $statement = $db->prepare($query);
-   $statement->execute();
 
-   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-   {
-	   $title = $row['b.title'];
-	   $fname = $row['a.fname'];
-	   $lname = $row['a.lname'];
-	   $publisher = $row['b.publisher'];
-	   $year = $row['b.year'];
-      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
-   }
-}
+	$query2 = "CREATE TABLE genre (
+	genre_id SERIAL PRIMARY KEY,
+	genre VARCHAR(255)
+);
+
+CREATE TABLE author (
+	author_id SERIAL PRIMARY KEY,
+	fname VARCHAR(255),
+    lname VARCHAR(255),
+	genre_id int,
+	FOREIGN KEY (genre_id) REFERENCES genre(genre_id)
+)
+
+CREATE TABLE patron (
+	patron_id SERIAL PRIMARY KEY,
+	fname VARCHAR(255),
+    lname VARCHAR(255)
+)
+
+CREATE TABLE books (
+	book_id SERIAL PRIMARY KEY,
+	title VARCHAR(255),
+	author_id int,
+    patron_id int,
+    due_date DATE,
+	year DATE,
+	publisher VARCHAR(255),
+	FOREIGN KEY (author_id) REFERENCES author(author_id),
+    FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
+)";
+
+   //$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+   //INNER JOIN author a ON b.author_id = a.author_id";
+   //$statement = $db->prepare($query);
+   $statement2 = $db->prepare($query2);
+   $statement->execute();
+   //$statement->execute();
+
+//   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+ //  {
+//	   $title = $row['b.title'];
+//	   $fname = $row['a.fname'];
+//	   $lname = $row['a.lname'];
+//	   $publisher = $row['b.publisher'];
+//	   $year = $row['b.year'];
+//      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
+//   }
+//}
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
