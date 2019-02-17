@@ -106,12 +106,12 @@ $db = get_db();
 
 	  $genre_statement = $db->prepare('SELECT genre_id, genre FROM genre');
 	  $genre_statement->execute();
-
-	  while($row = $genre_statement->fetch(PDO::FETCH_ASSOC))
+echo "<h3>Genre</h3>";
+	while($row = $genre_statement->fetch(PDO::FETCH_ASSOC))
 	  {
 		  $genre = $row['genre'];
 		  $genre_id = $row['genre_id'];
-		  echo "<h2>Genre</h2>";
+	
 		  echo "<label>$genre</label>";
 		  echo "<input type='radio' name='genre_id' value='$genre_id'><br>";
 	  }
@@ -124,13 +124,13 @@ $db = get_db();
 	{
 		  $statement2 = $db->prepare('SELECT author_id, fname, lname FROM author');
 		  $statement2->execute();
-
+	 echo "<h3>Author</h3>";
 		  while ($row = $statement2->fetch(PDO::FETCH_ASSOC))
 		  {
 			  $fname = $row['fname'];
 			  $lname = $row['lname'];
 					 $author_id = $row['author_id'];
-					 echo "<h2>Author</h2>";
+				
 					 echo "<label>$fname $lname</label>";
 			  echo "<input type='radio' name='author' value='$author_id'><br>";
 		  }
