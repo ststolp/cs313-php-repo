@@ -81,7 +81,7 @@ CREATE TABLE books (
 //	   $year = $row['b.year'];
 //      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
 //   }
-//}
+}
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
