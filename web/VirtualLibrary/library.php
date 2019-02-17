@@ -86,11 +86,11 @@ $db = get_db();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
-	   $title = $row['b.title'];
-	   $fname = $row['a.fname'];
-	   $lname = $row['a.lname'];
-	   $publisher = $row['b.publisher'];
-	   $year = $row['b.year'];
+	   $title = $row['title'];
+	   $fname = $row['fname'];
+	   $lname = $row['lname'];
+	   $publisher = $row['publisher'];
+	   $year = $row['year'];
      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
   }
 
