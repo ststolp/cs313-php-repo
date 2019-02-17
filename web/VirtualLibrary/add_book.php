@@ -25,7 +25,7 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $date = $_POST['year'];
 $publisher = $_POST['publisher'];
-$author_id = $_POST['author'];
+$GLOBALS['author_id'] = $_POST['author'];
 $genre_id = $_POST['genre_id'];
 $new_genre = $_POST['new_genre'];
 
@@ -58,10 +58,10 @@ if ($fname != "") {
       $statement = $db->prepare($query);
       $statement->execute();
       $author_id_array = $statement->fetch(PDO::FETCH_ASSOC);
-      $author_id = $author_id_array['author_id'];
+      $GLOBALS['$author_id'] = $author_id_array['author_id'];
 }
 
-
+     $author_id = $GLOBALS['author_id'];
     $query = "INSERT INTO books (title, author_id, patron_id, due_date, year, publisher) 
     VALUES (:title, :author_id, (SELECT patron_id FROM patron WHERE fname = 'The'), (SELECT CURRENT_DATE), :year, :publisher)";
     $statement = $db->prepare($query);
