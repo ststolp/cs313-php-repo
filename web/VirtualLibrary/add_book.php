@@ -4,21 +4,6 @@ try
 require_once("dbConnect.php");
 
 $db = get_db();
-//   $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
-//    INNER JOIN author a ON b.author_id = a.author_id";
-//    $statement = $db->prepare($query);
-//    $statement->execute();
-
-//   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-//   {
-// 	   $title = $row['b.title'];
-// 	   $fname = $row['a.fname'];
-// 	   $lname = $row['a.lname'];
-// 	   $publisher = $row['b.publisher'];
-// 	   $year = $row['b.year'];
-//      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
-//   }
-
 
 $title = $_POST['title'];
 $fname = $_POST['fname'];
@@ -47,11 +32,11 @@ if ($new_genre != "") {
 if ($fname != "") {
     $query = "INSERT INTO author (fname, lname, genre_id) 
     VALUES (:fname, :lname, :genre_id)";
-    $statement = $db->prepare($query);
-    $statement->bindValue(':fname', $fname);
-     $statement->bindValue(':lname', $lname);
-      $statement->bindValue(':genre_id', $genre_id);
-      $statement->execute();
+    $statement_author = $db->prepare($query);
+    $statement_author->bindValue(':fname', $fname);
+     $statement_author->bindValue(':lname', $lname);
+      $statement_author->bindValue(':genre_id', $genre_id);
+      $statement_author->execute();
       
       $query = "SELECT author_id FROM author WHERE 
   fname = '$fname' AND lname = '$lname'";
@@ -69,8 +54,6 @@ if ($fname != "") {
 
     $statement->bindValue(':title', $title);
 	$statement->bindValue(':author_id', $author_id);
-   // $statement->bindValue(':patron_id', );
-    //$statement->bindValue(':due_date', 2000);
     $statement->bindValue(':year', $date);
     $statement->bindValue(':publisher', $publisher);
 
