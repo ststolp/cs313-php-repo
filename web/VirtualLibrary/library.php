@@ -31,8 +31,7 @@ $db = NULL;
 <body>
 <h1>The Library</h1>
 <?php
-try 
-{
+
 
 // 	$query = "INSERT INTO patron (fname, lname) 
 // VALUES ('The', 'Librarian')";
@@ -93,7 +92,7 @@ try
 	   $year = $row['b.year'];
      echo "<p><b>$title</b> by $fname $lname</p><p>publisher $publisher, $year.</p>"; 
   }
-}
+
 
 ?>
 
