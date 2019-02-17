@@ -37,23 +37,23 @@ try
 	$query2 = "CREATE TABLE genre (
 	genre_id SERIAL PRIMARY KEY,
 	genre VARCHAR(255)
-);
+)";
 
-CREATE TABLE author (
+$query3 = "CREATE TABLE author (
 	author_id SERIAL PRIMARY KEY,
 	fname VARCHAR(255),
     lname VARCHAR(255),
 	genre_id int,
 	FOREIGN KEY (genre_id) REFERENCES genre(genre_id)
-);
+)";
 
-CREATE TABLE patron (
+$query4 = "CREATE TABLE patron (
 	patron_id SERIAL PRIMARY KEY,
 	fname VARCHAR(255),
     lname VARCHAR(255)
-);
+)";
 
-CREATE TABLE books (
+$query5 = "CREATE TABLE books (
 	book_id SERIAL PRIMARY KEY,
 	title VARCHAR(255),
 	author_id int,
@@ -70,6 +70,15 @@ CREATE TABLE books (
    //$statement = $db->prepare($query);
    $statement2 = $db->prepare($query2);
    $statement2->execute();
+
+    $statement3 = $db->prepare($query3);
+   $statement3->execute();
+
+    $statement4 = $db->prepare($query4);
+   $statement4->execute();
+
+    $statement5 = $db->prepare($query5);
+   $statement5->execute();
    //$statement->execute();
 
 //   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
