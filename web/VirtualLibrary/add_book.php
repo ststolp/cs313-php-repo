@@ -62,13 +62,13 @@ if ($fname != "") {
 
 
     $query = "INSERT INTO books (title, author_id, patron_id, due_date, year, publisher) 
-    VALUES (:title, :author_id, (SELECT patron_id FROM patron WHERE fname = 'The'), :due_date, :year, :publisher)";
+    VALUES (:title, :author_id, (SELECT patron_id FROM patron WHERE fname = 'The'), (SELECT CURRENT_DATE), :year, :publisher)";
     $statement = $db->prepare($query);
 
     $statement->bindValue(':title', $title);
 	$statement->bindValue(':author_id', $author_id);
    // $statement->bindValue(':patron_id', );
-    $statement->bindValue(':due_date', 2000);
+    //$statement->bindValue(':due_date', 2000);
     $statement->bindValue(':year', $date);
     $statement->bindValue(':publisher', $publisher);
 
