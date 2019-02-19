@@ -2,12 +2,8 @@
 session_start();
 require_once("dbConnect.php");
 $db = get_db();
-$logged = $_REQUEST['logged'];
-if ($logged != NULL) {
-    if ($logged == true) {
+$username = $_SESSION['username'];
 
-    }
-}
 ?>
 <!DOCTYPE html>
 <head>
@@ -17,12 +13,8 @@ if ($logged != NULL) {
 //header
 <a href='Register.php'>Register</a>
 <?php
-if (logged == NULL) {
+if ($username == "") {
    echo "<a href='sign_in.php'>Sign in</a>";
-}
-else if ($logged == false) {
-echo "<a href='sign_in.php'>Sign in</a>";
-echo "<p style='color:red'>Invalid username or password</p>";
 }
 else {
     echo "<a href='sign_in.php?sign_out=true'>Sign Out</a>";

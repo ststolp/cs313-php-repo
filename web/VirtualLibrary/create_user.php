@@ -15,6 +15,6 @@ $statement->bindValue(':username', $username);
 $statement->bindValue(':password', $hashed_password);
 $statement->execute();
 
-header("location: sign_in.php");
+header("Location: sign_in.php");
 die();
 ?>
