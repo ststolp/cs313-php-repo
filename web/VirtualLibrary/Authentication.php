@@ -15,7 +15,7 @@
 if ($password != NULL) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "SELECT password FROM patron WHERE username = $username";
+    $query = "SELECT password FROM patron WHERE username = '$username'";
     $statement = $db->prepare($query);
     $statement->execute();
 
