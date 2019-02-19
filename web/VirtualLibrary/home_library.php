@@ -13,6 +13,7 @@ $username = $_SESSION['username'];
 //header
 <a href='Register.php'>Register</a>
 <?php
+echo "<p>The username is $username</p>";
 if ($username == "") {
    echo "<a href='sign_in.php'>Sign in</a>";
 }
