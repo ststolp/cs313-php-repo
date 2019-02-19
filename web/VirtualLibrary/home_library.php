@@ -13,13 +13,6 @@ $username = $_SESSION['username'];
 //header
 <a href='Register.php'>Register</a>
 <?php
-$queried = $_SESSION['queried'];
-$password = $_SESSION['password'];
-echo "<p>The username is $username</p>
-<p>The queried password is $queried and the password is $password</p> ";
-echo password_hash("tesing", PASSWORD_DEFAULT);
-echo "<br>";
-echo password_hash("tesing", PASSWORD_DEFAULT);
 if ($username == "") {
    echo "<a href='sign_in.php'>Sign in</a>";
 }
