@@ -22,8 +22,11 @@ if ($password != "") {
 
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     $queried_password = $row['password'];
+    $_SESSION['queried'] = $queried_password;
+    $_SESSION['password'] = $hashed_password;
     if ($queried_password == $hashed_password) {
         $_SESSION['username'] = $username;
+
         header("Location: home_library.php");
     }
     else 
