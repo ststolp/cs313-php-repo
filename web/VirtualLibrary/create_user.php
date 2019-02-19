@@ -8,7 +8,7 @@ $password = $_POST['password'];
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-$query = 'INSERT INTO user (username, password)
+$query = 'INSERT INTO patron (username, password)
         VALUES (:username, :password)';
 $statement = $db->prepare($query);
 $statement->bindValue(':username', $username);
