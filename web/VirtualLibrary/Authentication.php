@@ -28,15 +28,18 @@ if ($password != "") {
         $_SESSION['username'] = $username;
 
         header("Location: home_library.php");
+        die();
     }
     else 
     {
         $_SESSION['username'] = "";
        header("Location: home_library.php");
+       die();
     }
 } else {
     $_SESSION['username'] = "";
     header("Location: home_library.php");
+    die();
 }
 
 
