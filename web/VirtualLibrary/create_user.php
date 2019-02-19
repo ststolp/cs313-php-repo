@@ -13,7 +13,7 @@ $query = 'INSERT INTO user (username, password)
 $statement = $db->prepare($query);
 $statement->bindValue(':username', $username);
 $statement->bindValue(':password', $hashed_password);
-$db->execute();
+$statement->execute();
 
 header("location: sign_in.php");
 die();
