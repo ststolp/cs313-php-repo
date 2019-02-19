@@ -9,9 +9,9 @@ session_start();
 <body>
     <form action='Authentication.php' method='post'>
     <label>Username</label>
-    <input type='text' name='username'>
+    <input type='text' name='username' value="">
     <label>Password</label>
-    <input type='text' name='password'>
+    <input type='text' name='password' value="">
     <input type='submit' value='Sign In'>
     </form>
 </body>
