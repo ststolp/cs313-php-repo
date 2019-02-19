@@ -12,7 +12,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-if ($password != NULL) {
+if ($password != "") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "SELECT password FROM patron WHERE username = '$username'";
@@ -21,7 +21,9 @@ if ($password != NULL) {
 
 
     $row = $statement->fetch(PDO::FETCH_ASSOC);
-    if ($row['password'] == $hashed_password) {
+    $queried_password = $row['password'];
+    $hashed_queried_password = password_hash($queried_password, PASSWORD_DEFAULT);
+    if ($hashed_queried_password == $hashed_password) {
         $_SESSION['username'] = $username;
         header("Location: home_library.php");
     }
