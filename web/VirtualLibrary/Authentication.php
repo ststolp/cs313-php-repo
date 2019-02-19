@@ -6,7 +6,7 @@
     $sign_out = $_REQUEST['sign_out'];
     if ($sign_out != NULL && $sign_out == true) {
         $_SESSION['username'] = "";
-        
+
     }
  //   $_SESSION['id'] = 
     $username = $_POST['username'];
@@ -15,7 +15,7 @@
 if ($password != NULL) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "SELECT password FROM user WHERE username = $username";
+    $query = "SELECT password FROM patron WHERE username = $username";
     $statement = $db->prepare($query);
     $statement->execute();
 
