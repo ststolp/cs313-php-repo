@@ -17,7 +17,7 @@ if ($username == "") {
    echo "<a href='sign_in.php'>Sign in</a>";
 }
 else {
-    echo "<a href='sign_in.php?sign_out=true'>Sign Out</a>";
+    echo "<a href='Authentication.php?sign_out=true'>Sign Out</a>";
 }
 ?>
 
