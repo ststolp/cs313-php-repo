@@ -14,5 +14,6 @@ if ($username == "") {
 else {
     echo "<a href='Authentication.php?sign_out=true'>Sign Out</a>";
 }
+echo "<a href='my_books.php'>My Books</a>";
 echo "</div>"
 ?>

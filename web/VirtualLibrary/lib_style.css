@@ -12,13 +12,11 @@
     padding: 2%;
 }
 
-.top {
-    background-color: rgb(71, 63, 184);
-}
 
 .top a {
+     background-color: rgb(71, 63, 184);
     float: left;
-    color: rgb(55,55,55);
+    color: rgb(177, 231, 231);
     text-align: center;
     padding: 1%;
     text-decoration: none;
