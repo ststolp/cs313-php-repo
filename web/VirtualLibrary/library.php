@@ -20,14 +20,7 @@ if ($search != "") {
 		ORDER BY b.title";
 		$statement = $db->prepare($query);
 		$statement->execute();
-		while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-			 $title = $row['title'];
-	 		  $fname = $row['fname'];
-			   $lname = $row['lname'];
-			   $publisher = $row['publisher'];
-			   $year = $row['year'];
-     		echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>"; 
-		}
+	
 	} else if ($method == 'title') {
 		$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
@@ -35,14 +28,7 @@ if ($search != "") {
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
-		while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-			 $title = $row['title'];
-	 		  $fname = $row['fname'];
-			   $lname = $row['lname'];
-			   $publisher = $row['publisher'];
-			   $year = $row['year'];
-     		echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>"; 
-		}
+	
 	} else if ($method == 'genre') {
        	$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
@@ -51,14 +37,7 @@ $statement = $db->prepare($query);
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
-		while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-			 $title = $row['title'];
-	 		  $fname = $row['fname'];
-			   $lname = $row['lname'];
-			   $publisher = $row['publisher'];
-			   $year = $row['year'];
-     		echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>"; 
-		}
+	
   } else {
 
 	$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
@@ -67,35 +46,33 @@ $statement = $db->prepare($query);
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
-		while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-			 $title = $row['title'];
-	 		  $fname = $row['fname'];
-			   $lname = $row['lname'];
-			   $publisher = $row['publisher'];
-			   $year = $row['year'];
-     		echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>"; 
-		}
+	
 	}
 } else {
 
 
-   $query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
+   $query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
    INNER JOIN author a ON b.author_id = a.author_id
-   ORDER BY title";
+   ORDER BY b.title";
    $statement = $db->prepare($query);
    $statement->execute();
 
+ 
+}
+
+echo "<form action='checkout' method='post>";
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
+	   $book_id = $row['book_id'];
 	   $title = $row['title'];
 	   $fname = $row['fname'];
 	   $lname = $row['lname'];
 	   $publisher = $row['publisher'];
 	   $year = $row['year'];
-     echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>"; 
+	 echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>";
+	 echo "<label>Check out this book</label>";
+	 echo "<input type='radio' name='checkout[]' value='$book_id"; 
   }
-}
-
 ?>
 <br>
 <h2>Add a Book</h2>
