@@ -2,7 +2,7 @@
    background-color: rgb(58, 91, 238);
    color: white;
    font-family: Helvetica;
-   padding: 5%;
+   padding: 4%;
 }
 
 .footer {
@@ -10,4 +10,24 @@
     color: white;
     font-family: Helvetica;
     padding: 2%;
+}
+
+.top {
+    background-color: rgb(71, 63, 184);
+}
+
+.top a {
+    float: left;
+    color: rgb(55,55,55);
+    text-align: center;
+    padding: 1%;
+    text-decoration: none;
+}
+
+.top a:hover {
+    background-color: rgb(143, 136, 136);
+}
+
+.top a.active {
+    background-color: rgb(121, 190, 190);
 }

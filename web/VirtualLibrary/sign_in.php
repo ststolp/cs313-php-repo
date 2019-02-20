@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="lib_style.css">
 </head>
 <body>
 <?php include 'header.php' ?>
