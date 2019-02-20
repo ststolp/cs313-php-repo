@@ -11,7 +11,7 @@ $db = get_db();
 <body>
 <?php include 'header.php';  ?>
 <br>
-<form action='library.php' method='post'>
+<form action='library.php' method='post'><br>
     <label>Author's last name</label>
     <input type='checkbox' name='method' value='lname'>
     <label>Title</label>

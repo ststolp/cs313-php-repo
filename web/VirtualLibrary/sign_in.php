@@ -9,11 +9,12 @@ session_start();
 </head>
 <body>
 <?php include 'header.php' ?>
+<br>
     <form action='Authentication.php' method='post'>
     <label>Username</label>
-    <input type='text' name='username' value="">
+    <input type='text' name='username' value=""><br>
     <label>Password</label>
-    <input type='text' name='password' value="">
+    <input type='text' name='password' value=""><br>
     <input class="button" type='submit' value='Sign In'>
     </form>
 
