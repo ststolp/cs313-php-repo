@@ -17,7 +17,7 @@ if ($username == "") {
     <link rel="stylesheet" type="text/css" href="lib_style.css">
 </head>
 <body>
-<?php include 'header.php'
+<?php include 'header.php';
 $checkout = $_POST['checkout'];
 $items_amount = count($checkout); ?>
     <p>Items will be available until the date 
