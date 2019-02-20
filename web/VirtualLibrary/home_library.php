@@ -19,7 +19,7 @@ $db = get_db();
      <label>Genre</label>
     <input type='checkbox' name='method' value='genre'>
     <input type='text' placeholder='Search...' name='search' value="">
-    <input type='submit' value='search'>
+    <input class="button" type='submit' value='search'>
 </form>
 <h1>Library</h1>
 <form action='library.php' method='get'>

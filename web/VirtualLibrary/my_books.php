@@ -40,6 +40,7 @@ if ($username == "") {
         $checked_out = $row['checked_out'];
           echo "<p>$title                       $due_date</p>";
     }
+    include 'footer.php';
     die();
 ?>
 </body>

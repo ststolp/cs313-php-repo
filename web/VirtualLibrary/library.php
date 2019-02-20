@@ -74,7 +74,7 @@ echo '<form action="checkout.php" method="post">';
 	 echo "<input type='checkbox' name='checkout[]' value='$book_id'>";
  
   }
-  echo '<input type="submit" value="Check Out">';
+  echo '<br><input class="button" type="submit" value="Check Out">';
   echo '</form>';
 ?>
 <br>
@@ -129,7 +129,7 @@ echo "<h3>Genre</h3>";
 	<input type="date" name="year"><br>
 	<label>Publisher</label>
 	<input type="text" name="publisher"><br>
-	<input type="submit" value="Add book">
+	<input class="button" type="submit" value="Add book">
 	</form>
 <?php include 'footer.php'; ?>
 </body>

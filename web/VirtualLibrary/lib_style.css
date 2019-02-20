@@ -41,3 +41,14 @@ h3 {
     white-space: pre;
 }
 
+.button {
+    background-color: rgb(190, 157, 10);
+    border: none;
+    color: rgb(207, 191, 117);
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Helvetica, sans-serif;
+}
+

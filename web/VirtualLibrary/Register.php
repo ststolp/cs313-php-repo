@@ -15,7 +15,7 @@ session_start();
     <input type='text' name='password'>
     <label>Confirm Password</label>
     <input type='text' name='confirm_password'>
-    <input type='submit' value='Sign In'>
+    <input class="button" type='submit' value='Sign In'>
     </form>
 <?php include 'footer.php' ?>
 </body>
