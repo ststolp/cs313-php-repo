@@ -60,7 +60,7 @@ $statement = $db->prepare($query);
  
 }
 
-echo "<form action='checkout' method='post>";
+echo "<form action='checkout.php' method='post>";
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
 	   $book_id = $row['book_id'];
@@ -73,6 +73,7 @@ echo "<form action='checkout' method='post>";
 	 echo "<label>Check out this book</label>";
 	 echo "<input type='radio' name='checkout[]' value='$book_id"; 
   }
+  echo "<input type='submit' value='Check Out'>";
 ?>
 <br>
 <h2>Add a Book</h2>
