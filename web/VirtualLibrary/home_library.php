@@ -2,31 +2,21 @@
 session_start();
 require_once("dbConnect.php");
 $db = get_db();
-$username = $_SESSION['username'];
-
 ?>
 <!DOCTYPE html>
 <head>
 <title>Library</title>
+<link rel="stylesheet" type="text/css" href="lib_style.css">
 </head>
 <body>
-//header
-<a href='Register.php'>Register</a>
-<?php
-if ($username == "") {
-   echo "<a href='sign_in.php'>Sign in</a>";
-}
-else {
-    echo "<a href='Authentication.php?sign_out=true'>Sign Out</a>";
-}
-?>
+<?php include 'header.php';  ?>
 <form action='library.php' method='post'>
     <label>Author's last name</label>
     <input type='checkbox' name='method' value='lname'>
     <label>Title</label>
     <input type='checkbox' name='method' value='title'>
+     <label>Genre</label>
     <input type='checkbox' name='method' value='genre'>
-    <label>Genre</label>
     <input type='text' placeholder='Search...' name='search' value="">
     <input type='submit' value='search'>
 </form>
@@ -34,6 +24,7 @@ else {
 <form action='library.php' method='get'>
 
 <input type="submit" value="See Books">
+<?php include 'footer.php';  ?>
 </form>
 </body>
 </html>
