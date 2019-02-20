@@ -23,8 +23,10 @@ else {
 <form action='library.php' method='post'>
     <label>Author's last name</label>
     <input type='checkbox' name='method' value='lname'>
+    <label>Title</label>
     <input type='checkbox' name='method' value='title'>
     <input type='checkbox' name='method' value='genre'>
+    <label>Genre</label>
     <input type='text' placeholder='Search...' name='search' value="">
     <input type='submit' value='search'>
 </form>
