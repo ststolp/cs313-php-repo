@@ -34,5 +34,6 @@
 p {
     font-family: Verdana, sans-serif;
     color: rgb(54, 71, 71);
+    white-space: pre;
 }
 

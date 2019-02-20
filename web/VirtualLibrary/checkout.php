@@ -23,7 +23,7 @@ $items_amount = count($checkout); ?>
     <p>Items will be available until the date 
     listed below.</p>
     <h3><?php echo "$items_amount"; ?> item(s) checked out</h3>
-    <p>Title______________________Due</p>
+    <p>Title                                  Due</p>
 <?php
 
 
@@ -52,7 +52,7 @@ foreach($checkout as $newBook) {
     $statement->execute();
     $title_array = $statement->fetch(PDO::FETCH_ASSOC);
     $title_of_book = $title_array['title'];
-    echo "<p>$title_of_book _________________ $due_date</p>";
+    echo "<p>$title_of_book                            $due_date</p>";
 
 }
 echo "<p>$current_date</p>";
