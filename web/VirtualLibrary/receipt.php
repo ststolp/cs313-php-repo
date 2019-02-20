@@ -32,5 +32,6 @@ $items_amount = $_SESSION['items_amount'];
           echo "<p>$title             $due_date</p>";
     }
   echo "<p>$checked_out</p>";
+  ?>
 </body>
 </html>
