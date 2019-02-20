@@ -21,7 +21,6 @@ if ($search != "") {
 		ORDER BY b.title";
 		$statement = $db->prepare($query);
 		$statement->execute();
-	  echo "<p> In method for last name</p>";
 	} else if ($method == 'title') {
 		$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
@@ -51,7 +50,6 @@ $statement = $db->prepare($query);
 	}
 } else {
 
-   echo "<p>Overwriting</p>";
    $query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
    INNER JOIN author a ON b.author_id = a.author_id
    ORDER BY b.title";
@@ -71,7 +69,7 @@ echo '<form action="checkout.php" method="post">';
 	   $year = $row['year'];
 	 echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>";
 	 echo "<label>Check out this book</label><br>";
-	 echo '<input type="radio" name="checkout[]" value="$book_id">';
+	 echo '<input type="checkbox" name="checkout[]" value="$book_id">';
  
   }
   echo '<input type="submit" value="Check Out">';
