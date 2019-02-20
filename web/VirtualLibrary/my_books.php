@@ -1,5 +1,5 @@
 <?php
-sesstion_start();
+session_start();
 require_once("dbConnect.php");
 $db = get_db();
 $username = $_SESSION['username'];
