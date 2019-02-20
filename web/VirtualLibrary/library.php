@@ -7,10 +7,12 @@ $query = "";
 ?>
 <!DOCTYPE html>
 <head>
+<link rel="stylesheet" type="text/css" href="lib_style.css">
 </head>
 <body>
-<h1>The Library</h1>
 <?php
+include 'header.php';
+echo "<h1>The Library</h1>";
 $search = $_POST['search'];
 if ($search != "") {
 	$method = $_POST['method'];
@@ -129,6 +131,6 @@ echo "<h3>Genre</h3>";
 	<input type="text" name="publisher"><br>
 	<input type="submit" value="Add book">
 	</form>
-	<label>
+<?php include 'footer.php'; ?>
 </body>
 </html>

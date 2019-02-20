@@ -44,5 +44,4 @@ if ($password != "") {
     die();
 }
 
-
 ?>

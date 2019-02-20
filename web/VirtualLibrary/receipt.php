@@ -12,8 +12,10 @@ $items_amount = $_SESSION['items_amount'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="lib_style.css">
 </head>
 <body>
+<?php include 'header.php' ?>
 <a href = "home_library.php">Home</a>
     <p>Items will be available until the date 
     listed below.</p>
@@ -33,6 +35,8 @@ $items_amount = $_SESSION['items_amount'];
           echo "<p>$title _____________________$due_date</p>";
     }
   echo "<p>$checked_out</p>";
+  die();
+  include 'footer.php'; 
   ?>
 </body>
 </html>

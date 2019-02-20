@@ -1,0 +1,13 @@
+.header {
+   background-color: rgb(58, 91, 238);
+   color: white;
+   font-family: Helvetica;
+   padding: 5%;
+}
+
+.footer {
+    background-color: rgb(58, 91, 238);
+    color: white;
+    font-family: Helvetica;
+    padding: 2%;
+}

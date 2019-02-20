@@ -4,8 +4,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="lib_style.css">
 </head>
 <body>
+<?php include 'header.php' ?>
     <form action='create_user.php' method='post'>
     <label>Username</label>
     <input type='text' name='username'>
@@ -15,5 +17,6 @@ session_start();
     <input type='text' name='confirm_password'>
     <input type='submit' value='Sign In'>
     </form>
+<?php include 'footer.php' ?>
 </body>
 </html>
