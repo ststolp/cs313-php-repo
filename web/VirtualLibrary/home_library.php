@@ -24,7 +24,7 @@ $db = get_db();
 <h1>Library</h1>
 <form action='library.php' method='get'>
 
-<input type="submit" value="See Books">
+<input class="button" type="submit" value="See Books">
 <br>
 <?php include 'footer.php';  ?>
 </form>

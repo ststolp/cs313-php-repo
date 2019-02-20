@@ -44,11 +44,15 @@ h3 {
 .button {
     background-color: rgb(190, 157, 10);
     border: none;
-    color: rgb(207, 191, 117);
+    color: rgb(241, 226, 158);
     padding: 1%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: Helvetica, sans-serif;
+}
+
+form {
+    
 }
 
