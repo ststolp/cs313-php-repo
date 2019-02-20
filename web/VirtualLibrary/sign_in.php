@@ -9,7 +9,7 @@ session_start();
 </head>
 <body>
 <?php include 'header.php' ?>
-<br>
+<div>
     <form action='Authentication.php' method='post'>
     <label>Username</label>
     <input type='text' name='username' value=""><br>
@@ -17,7 +17,7 @@ session_start();
     <input type='text' name='password' value=""><br>
     <input class="button" type='submit' value='Sign In'>
     </form>
-
+</div>
 <?php include 'footer.php'  ?>
 </body>
 </html>

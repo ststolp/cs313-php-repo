@@ -12,7 +12,7 @@ $query = "";
 <body>
 <?php
 include 'header.php';
-echo "<h1>The Library</h1>";
+echo "<div><h1>The Library</h1>";
 $search = $_POST['search'];
 if ($search != "") {
 	$method = $_POST['method'];
@@ -75,7 +75,7 @@ echo '<form action="checkout.php" method="post">';
  
   }
   echo '<br><input class="button" type="submit" value="Check Out">';
-  echo '</form>';
+  echo '</form></div><div>';
 ?>
 <br>
 <h2>Add a Book</h2>
@@ -131,6 +131,7 @@ echo "<h3>Genre</h3>";
 	<input type="text" name="publisher"><br>
 	<input class="button" type="submit" value="Add book">
 	</form>
+	</div>
 <?php include 'footer.php'; ?>
 </body>
 </html>

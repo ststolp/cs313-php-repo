@@ -20,7 +20,7 @@ if ($username == "") {
 <body>
     <?php
     include 'header.php';
-    echo"<br><h2>Your Books</h2>";
+    echo"<div><h2>Your Books</h2>";
   $query_patron_id = "SELECT patron_id FROM patron WHERE username = '$username'";
   $statement_id = $db->prepare($query_patron_id);
   $statement_id->execute();
@@ -40,6 +40,7 @@ if ($username == "") {
         $checked_out = $row['checked_out'];
           echo "<p>$title                       $due_date</p>";
     }
+    echo "</div>";
     include 'footer.php';
     die();
 ?>

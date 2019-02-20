@@ -8,7 +8,7 @@ session_start();
 </head>
 <body>
 <?php include 'header.php' ?>
-<br>
+<div>
     <form action='create_user.php' method='post'>
     <label>Username</label>
     <input type='text' name='username'><br>
@@ -18,6 +18,7 @@ session_start();
     <input type='text' name='confirm_password'><br>
     <input class="button" type='submit' value='Create Account'>
     </form>
+    </div>  
 <?php include 'footer.php' ?>
 </body>
 </html>
