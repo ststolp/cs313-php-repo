@@ -2,7 +2,7 @@
 require_once("dbConnect.php");
 
 $db = get_db();
-
+$statement = "";
 ?>
 <!DOCTYPE html>
 <head>
@@ -60,7 +60,8 @@ $statement = $db->prepare($query);
  
 }
 
-echo "<form action='checkout.php' method='post>";
+
+echo '<form action="checkout.php" method="post">';
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
 	   $book_id = $row['book_id'];
@@ -70,11 +71,12 @@ echo "<form action='checkout.php' method='post>";
 	   $publisher = $row['publisher'];
 	   $year = $row['year'];
 	 echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>";
-	 echo "<label>Check out this book</label>";
-	 echo "<input type='radio' name='checkout[]' value='$book_id"; 
+	 echo "<label>Check out this book</label><br>";
+	 echo '<input type="radio" name="checkout[]" value="$book_id">';
+ 
   }
-  echo "<input type='submit' value='Check Out'>";
-  echo "</form>";
+  echo '<input type="submit" value="Check Out">';
+  echo '</form>';
 ?>
 <br>
 <h2>Add a Book</h2>
