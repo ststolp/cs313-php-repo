@@ -5,9 +5,12 @@ $db = get_db();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-
+$confirm_password = $_POST['confirm_password'];
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+if ($password != $confirm_password) {
+        header("Location: Register.php");
+}
 $query = 'INSERT INTO patron (username, password)
         VALUES (:username, :password)';
 $statement = $db->prepare($query);
