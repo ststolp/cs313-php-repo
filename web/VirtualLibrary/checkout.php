@@ -35,17 +35,17 @@ $user_id_array = $statement->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_id_array['patron_id'];
 $_SESSION['user_id'] = $user_id;
 
-  $query_date = "SELECT CURRENT_DATE";
+  $query_date = "SELECT CURRENT_DATE AS date";
     $statement_date = $db->prepare($query_date);
     $statement_date->execute();
     $current_date_array = $statement_date->fetch(PDO::FETCH_ASSOC);
-   $current_date = $current_date_array['CURRENT_DATE'];
+   $current_date = $current_date_array['date'];
 
-     $query_due = "SELECT CURRENT_DATE + interval '30' day";
+     $query_due = "SELECT CURRENT_DATE + interval '30' day AS due_date";
     $statement_due = $db->prepare($query_due);
     $statement_due->execute();
     $due_date_array = $statement_due->fetch(PDO::FETCH_ASSOC);
-     $due_date = $due_date_array["CURRENT_DATE + integer '30' day"];
+     $due_date = $due_date_array['due_date'];
 foreach($checkout as $newBook) {
     $query = "SELECT title FROM books WHERE book_id = '$newBook'";
     $statement = $db->prepare($query);
