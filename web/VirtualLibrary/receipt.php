@@ -22,8 +22,9 @@ $items_amount = $_SESSION['items_amount'];
 <?php
     $query = "SELECT b.title, bp.due_date, bp.checked_out FROM books b
     INNER JOIN book_patron bp ON b.book_id = bp.book_id
-    INNER JOIN patron p ON p.patron_id = bp.patron_id";
-    $statement = $db->prepare();
+    INNER JOIN patron p ON p.patron_id = bp.patron_id
+    WHERE bp.patron_id = $user_id";
+    $statement = $db->prepare($query);
     $statement->execute();
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         $title = $row['title'];
