@@ -30,7 +30,7 @@ $items_amount = $_SESSION['items_amount'];
         $title = $row['title'];
         $due_date = $row['due_date'];
         $checked_out = $row['checked_out'];
-          echo "<p>$title_____________________$due_date</p>";
+          echo "<p>$title _____________________$due_date</p>";
     }
   echo "<p>$checked_out</p>";
   ?>
