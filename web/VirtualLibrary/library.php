@@ -69,7 +69,7 @@ echo '<form action="checkout.php" method="post">';
 	   $year = $row['year'];
 	 echo "<p><b>$title</b> by $fname $lname</p><p>Publisher: $publisher, $year.</p>";
 	 echo "<label>Check out this book</label><br>";
-	 echo '<input type="checkbox" name="checkout[]" value="$book_id">';
+	 echo "<input type='checkbox' name='checkout[]' value='$book_id'>";
  
   }
   echo '<input type="submit" value="Check Out">';
