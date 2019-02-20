@@ -18,7 +18,7 @@ $items_amount = $_SESSION['items_amount'];
     <p>Items will be available until the date 
     listed below.</p>
     <h3><?php echo "$items_amount"; ?> items checked out</h3>
-    <p>Title                       Due</p>
+    <p>Title______________________Due</p>
 <?php
     $query = "SELECT b.title, bp.due_date, bp.checked_out FROM books b
     INNER JOIN book_patron bp ON b.book_id = bp.book_id
@@ -30,7 +30,7 @@ $items_amount = $_SESSION['items_amount'];
         $title = $row['title'];
         $due_date = $row['due_date'];
         $checked_out = $row['checked_out'];
-          echo "<p>$title             $due_date</p>";
+          echo "<p>$title_____________________$due_date</p>";
     }
   echo "<p>$checked_out</p>";
   ?>
