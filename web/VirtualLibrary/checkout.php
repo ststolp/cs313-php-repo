@@ -2,19 +2,53 @@
 session_start();
 require_once("dbConnect.php");
 $db = get_db();
-
-$checkout = $_POST['checkout'];
-$_SESSION['items_amount'] = count($checkout);
 $username = $_SESSION['username'];
 if ($username == "") {
     header("Location: library.php");
 }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="lib_style.css">
+</head>
+<body>
+<?php include 'header.php' ?>
+    <p>Items will be available until the date 
+    listed below.</p>
+    <h3><?php echo "$items_amount"; ?> items checked out</h3>
+    <p>Title______________________Due</p>
+<?php
+
+$checkout = $_POST['checkout'];
+$items_amount = count($checkout);
+
 $query = "SELECT patron_id FROM patron WHERE username = '$username'";
 $statement = $db->prepare($query);
 $statement->execute();
 $user_id_array = $statement->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_id_array['patron_id'];
 $_SESSION['user_id'] = $user_id;
+
+  $query_date = "SELECT CURRENT_DATE";
+    $statement_date = $db->prepare($query_date);
+    $statement_date->execute();
+    $current_date = $statement_date->fetch(PDO::FETCH_ASSOC);
+
+     $query_due = "SELECT CURRENT_DATE";
+    $statement_due = $db->prepare($query_due);
+    $statement_due->execute();
+    $due_date = $statement_due->fetch(PDO::FETCH_ASSOC);
+
+foreach($checkout as $newBook) {
+    echo "<p>$newBook _________________ $due_date</p>";
+
+}
+echo "<p>$current_date</p>";
 foreach($checkout as $newBook) {
     $query = "INSERT INTO book_patron (book_id, patron_id, due_date, checked_out)
     VALUES (:book_id, :patron_id, CURRENT_DATE + interval '30' day, CURRENT_DATE)";
@@ -24,9 +58,8 @@ foreach($checkout as $newBook) {
     $statement->execute();
 }
 
-
-
-header("Location: receipt.php");
 die();
-
+include 'footer.php';
 ?>
+</body>
+</html>
