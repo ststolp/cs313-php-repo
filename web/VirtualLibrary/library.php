@@ -74,6 +74,7 @@ echo "<form action='checkout.php' method='post>";
 	 echo "<input type='radio' name='checkout[]' value='$book_id"; 
   }
   echo "<input type='submit' value='Check Out'>";
+  echo "</form>";
 ?>
 <br>
 <h2>Add a Book</h2>
