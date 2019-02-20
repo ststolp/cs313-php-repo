@@ -19,6 +19,8 @@
     color: rgb(177, 231, 231);
     text-align: center;
     padding: 1%;
+    display: block;
+    overflow: hidden;
     text-decoration: none;
 }
 
@@ -29,3 +31,4 @@
 .top a.active {
     background-color: rgb(121, 190, 190);
 }
+

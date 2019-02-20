@@ -22,7 +22,7 @@ $checkout = $_POST['checkout'];
 $items_amount = count($checkout); ?>
     <p>Items will be available until the date 
     listed below.</p>
-    <h3><?php echo "$items_amount"; ?> items checked out</h3>
+    <h3><?php echo "$items_amount"; ?> item(s) checked out</h3>
     <p>Title______________________Due</p>
 <?php
 
@@ -64,9 +64,9 @@ foreach($checkout as $newBook) {
     $statement->bindValue(':patron_id', $user_id);
     $statement->execute();
 }
-
-die();
 include 'footer.php';
+die();
+
 ?>
 </body>
 </html>
