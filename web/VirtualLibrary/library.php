@@ -3,6 +3,7 @@ require_once("dbConnect.php");
 
 $db = get_db();
 $statement = "";
+$query = "";
 ?>
 <!DOCTYPE html>
 <head>
@@ -50,14 +51,12 @@ $statement = $db->prepare($query);
 	}
 } else {
 
-
+   echo "<p>Overwriting</p>";
    $query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b 
    INNER JOIN author a ON b.author_id = a.author_id
    ORDER BY b.title";
    $statement = $db->prepare($query);
    $statement->execute();
-
- 
 }
 
 
