@@ -12,7 +12,7 @@ if ($username == "") {
 $query = "SELECT patron_id FROM patron WHERE username = '$username'";
 $statement = $db->prepare($query);
 $statement->execute();
-$user_id_array = $statement->fetch(PDO::FETCH_ASSOC));
+$user_id_array = $statement->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_id_array['patron_id'];
 $_SESSION['user_id'] = $user_id;
 foreach($checkout as $newBook) {
