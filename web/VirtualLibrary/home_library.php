@@ -20,20 +20,17 @@ else {
     echo "<a href='Authentication.php?sign_out=true'>Sign Out</a>";
 }
 ?>
-
-<!-- <?php 
-    // $query = "ALTER TABLE patron
-    //           ADD username VARCHAR(255)";
-    // $query2 = "ALTER TALBLE patron
-    // ADD password VARCHAR(255)";
-    // $statement = $db->prepare($query);
-    // $statement2 = $db->prepare($query2);
-    // $statement->execute();
-    // $statement2->execute();
-
-?> -->
+<form action='library.php' method='post'>
+    <label>Author's last name</label>
+    <input type='checkbox' name='method' value='lname'>
+    <input type='checkbox' name='method' value='title'>
+    <input type='checkbox' name='method' value='genre'>
+    <input type='text' placeholder='Search...' name='search' value="">
+    <input type='submit' value='search'>
+</form>
 <h1>Library</h1>
 <form action='library.php' method='get'>
+
 <input type="submit" value="See Books">
 </form>
 </body>
