@@ -47,7 +47,7 @@ $statement = $db->prepare($query);
        	$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
 		INNER JOIN genre g ON a.genre_id = g.genre_id
-		ON g.genre = '$search'
+		WHERE g.genre = '$search'
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
