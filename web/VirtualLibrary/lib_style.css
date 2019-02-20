@@ -31,4 +31,8 @@
 .top a.active {
     background-color: rgb(121, 190, 190);
 }
+p {
+    font-family: Verdana, sans-serif;
+    color: rgb(54, 71, 71);
+}
 

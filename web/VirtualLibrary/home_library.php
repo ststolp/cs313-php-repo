@@ -10,6 +10,7 @@ $db = get_db();
 </head>
 <body>
 <?php include 'header.php';  ?>
+<br>
 <form action='library.php' method='post'>
     <label>Author's last name</label>
     <input type='checkbox' name='method' value='lname'>
