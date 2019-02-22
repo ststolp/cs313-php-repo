@@ -17,14 +17,14 @@ $search = $_POST['search'];
 if ($search != "") {
 	$method = $_POST['method'];
 	if ($method == 'lname') {
-		$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
+		$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
 		WHERE a.lname = '$search'
 		ORDER BY b.title";
 		$statement = $db->prepare($query);
 		$statement->execute();
 	} else if ($method == 'title') {
-		$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
+		$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
 		WHERE b.title = '$search'
 		ORDER BY b.title";
@@ -32,7 +32,7 @@ $statement = $db->prepare($query);
 		$statement->execute();
 	
 	} else if ($method == 'genre') {
-       	$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
+       	$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
 		INNER JOIN genre g ON a.genre_id = g.genre_id
 		WHERE g.genre = '$search'
@@ -42,7 +42,7 @@ $statement = $db->prepare($query);
 	
   } else {
 
-	$query = "SELECT b.title, a.fname, a.lname, b.year, b.publisher FROM books b
+	$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
 		WHERE b.title = '$search'
 		ORDER BY b.title";
