@@ -20,10 +20,7 @@ if ($username == "") {
 <?php include 'header.php';
 $checkout = $_POST['checkout'];
 $items_amount = count($checkout); ?>
-    <p>Items will be available until the date 
-    listed below.</p>
-    <h3><?php echo "$items_amount"; ?> item(s) checked out</h3>
-    <p>Title                                  Due</p>
+ 
 <?php
 
 
@@ -34,6 +31,8 @@ $statement->execute();
 $user_id_array = $statement->fetch(PDO::FETCH_ASSOC);
 $user_id = $user_id_array['patron_id'];
 $_SESSION['user_id'] = $user_id;
+
+
 
   $query_date = "SELECT CURRENT_DATE AS date";
     $statement_date = $db->prepare($query_date);
@@ -46,12 +45,30 @@ $_SESSION['user_id'] = $user_id;
     $statement_due->execute();
     $due_date_array = $statement_due->fetch(PDO::FETCH_ASSOC);
      $due_date = $due_date_array['due_date'];
+?>
+
+     <p>Items will be available until the date 
+     listed below.</p>
+     <h3><?php echo "$items_amount"; ?> item(s) checked out</h3>
+     <p>Title                                  Due</p>
+<?php
 foreach($checkout as $newBook) {
-    $query = "SELECT title FROM books WHERE book_id = '$newBook'";
+    $query = "SELECT title, book_id FROM books WHERE book_id = '$newBook'";
     $statement = $db->prepare($query);
     $statement->execute();
     $title_array = $statement->fetch(PDO::FETCH_ASSOC);
     $title_of_book = $title_array['title'];
+    $book_id = $title_array['book_id'];
+    $query_duplicate = "SELECT book_id, patron_id FROM book_patron WHERE 
+    book_id = $book_id AND patron_id = $patron_id";
+    $statement_duplicate = $db->prepare($query_duplicate);
+    $statement_duplicate->execute();
+    $duplicate_array = $statement_duplicate->fetch(PDO::FETCH_ASSOC);
+    $duplicate = $duplicate_array['book_id'];
+    if ($duplicate == $book_id) {
+        echo "<p>You already have this book</p>";
+        header("Location: library.php");
+    }
     echo "<p>$title_of_book                            $due_date</p>";
 
 }
