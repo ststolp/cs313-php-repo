@@ -69,14 +69,14 @@ foreach($checkout as $newBook) {
     if ($duplicate == $book_id) {
         echo "<p>You already have this book</p>";
         header("Location: library.php");
-        duplicate = true;
+        $duplicate = true;
     }
     echo "<p>$title_of_book                            $due_date</p>";
 
 }
 
 echo "<p>$current_date</p>";
-if (duplicate != true) {
+if ($duplicate != true) {
 foreach($checkout as $newBook) {
     $query = "INSERT INTO book_patron (book_id, patron_id, due_date, checked_out)
     VALUES (:book_id, :patron_id, CURRENT_DATE + interval '30' day, CURRENT_DATE)";
