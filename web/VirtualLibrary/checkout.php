@@ -52,6 +52,7 @@ $_SESSION['user_id'] = $user_id;
      <h3><?php echo "$items_amount"; ?> item(s) checked out</h3>
      <p>Title                                  Due</p>
 <?php
+$duplicate = false;
 foreach($checkout as $newBook) {
     $query = "SELECT title, book_id FROM books WHERE book_id = '$newBook'";
     $statement = $db->prepare($query);
@@ -68,18 +69,22 @@ foreach($checkout as $newBook) {
     if ($duplicate == $book_id) {
         echo "<p>You already have this book</p>";
         header("Location: library.php");
+        duplicate = true;
     }
     echo "<p>$title_of_book                            $due_date</p>";
 
 }
+
 echo "<p>$current_date</p>";
+if (duplicate != true) {
 foreach($checkout as $newBook) {
     $query = "INSERT INTO book_patron (book_id, patron_id, due_date, checked_out)
     VALUES (:book_id, :patron_id, CURRENT_DATE + interval '30' day, CURRENT_DATE)";
     $statement = $db->prepare($query);
     $statement->bindValue(':book_id', $newBook);
     $statement->bindValue(':patron_id', $user_id);
-    $statement->execute();
+    $statement->execute()
+}
 }
 include 'footer.php';
 die();
