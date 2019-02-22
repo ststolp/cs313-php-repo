@@ -60,7 +60,7 @@ foreach($checkout as $newBook) {
     $title_of_book = $title_array['title'];
     $book_id = $title_array['book_id'];
     $query_duplicate = "SELECT book_id, patron_id FROM book_patron WHERE 
-    book_id = $book_id AND patron_id = $patron_id";
+    book_id = $book_id AND patron_id = $user_id";
     $statement_duplicate = $db->prepare($query_duplicate);
     $statement_duplicate->execute();
     $duplicate_array = $statement_duplicate->fetch(PDO::FETCH_ASSOC);
