@@ -83,7 +83,7 @@ foreach($checkout as $newBook) {
     $statement = $db->prepare($query);
     $statement->bindValue(':book_id', $newBook);
     $statement->bindValue(':patron_id', $user_id);
-    $statement->execute()
+    $statement->execute();
 }
 }
 include 'footer.php';
