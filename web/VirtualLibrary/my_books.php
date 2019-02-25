@@ -4,7 +4,7 @@ require_once("dbConnect.php");
 $db = get_db();
 $username = $_SESSION['username'];
 if ($username == "") {
-    header("Location: home_library.php");
+    header("Location: sign_in.php");
 }
 ?>
  
