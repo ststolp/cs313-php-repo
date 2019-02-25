@@ -124,11 +124,11 @@ echo "<h3>Genre</h3>";
  ?>
 	<label>Other Author</label>
 	<input type="text" name="fname" value="">
-	<input type="text" name="lname" value=""><br>
+	<input type="text" name="lname" value=""><br><br>
 	<label>year</label>
-	<input type="date" name="year"><br>
+	<input type="date" name="year"><br><br>
 	<label>Publisher</label>
-	<input type="text" name="publisher"><br>
+	<input type="text" name="publisher"><br><br>
 	<input class="button" type="submit" value="Add book">
 	</form>
 	</div>
