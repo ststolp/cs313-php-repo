@@ -63,13 +63,14 @@ h3.content {
 .form {
       padding: 2%;
        margin-left: 2%;
- 
+       background-color: rgb(64, 99, 133);
       border-left: 7px solid darkblue;
       
 }
 
 Label {
     font-family: Arial;
+    color: rgb(51, 51, 51);
 }
 .content {
     padding-left: 4%;
