@@ -38,7 +38,7 @@ if ($username == "") {
         $title = $row['title'];
         $due_date = $row['due_date'];
         $checked_out = $row['checked_out'];
-          echo "<p class='content'>$title                       $due_date</p>";
+          echo "<a href='contents.php'><p class='content'>$title                       $due_date</p></a>";
     }
     echo "</div>";
     include 'footer.php';
