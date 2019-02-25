@@ -13,9 +13,9 @@ session_start();
 <div class="content">
     <form action='Authentication.php' method='post'>
     <label>Username</label>
-    <input type='text' name='username' value=""><br>
+    <input type='text' name='username' value=""><br><br>
     <label>Password</label>
-    <input type='text' name='password' value=""><br>
+    <input type='text' name='password' value=""><br><br>
     <input class="button" type='submit' value='Sign In'>
     </form>
 </div>
