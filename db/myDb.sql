@@ -13,20 +13,18 @@ CREATE TABLE author (
 
 CREATE TABLE patron (
 	patron_id SERIAL PRIMARY KEY,
-	fname VARCHAR(255),
-    lname VARCHAR(255)
+	username VARCHAR(255),
+	password VARCHAR(255)
 );
 
 CREATE TABLE books (
 	book_id SERIAL PRIMARY KEY,
 	title VARCHAR(255),
-	author_id int,
-    patron_id int,
+	author_id int NOT NULL,
     due_date DATE,
 	year DATE,
 	publisher VARCHAR(255),
-	FOREIGN KEY (author_id) REFERENCES author(author_id),
-    FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
+	FOREIGN KEY (author_id) REFERENCES author(author_id)
 );
 -----------------------------------------------------------------------------------------
 INSERT INTO patron (fname, lname) 
