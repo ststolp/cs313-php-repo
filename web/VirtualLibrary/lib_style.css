@@ -61,9 +61,9 @@ h3.content {
 }
 
 .form {
-      padding: 4%;
-      backgound-color: rgb(113, 223, 238); 
-      color: rgb(212, 243, 255);
+      padding: 2%;
+       margin-left: 2%;
+ 
       border-left: 7px solid darkblue;
       
 }
