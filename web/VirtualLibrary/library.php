@@ -78,7 +78,7 @@ echo '<form class="content" action="checkout.php" method="post">';
   echo '</form></div><div>';
 ?>
 <br>
-<h2>Add a Book</h2>
+<h2 class="content">Add a Book</h2>
 <form class="form" action="add_book.php" method="post">
 	<label>Title</label>
 	<input type="text" name="title"><br>

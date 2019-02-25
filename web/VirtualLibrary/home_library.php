@@ -21,13 +21,13 @@ $db = get_db();
     <input type='text' placeholder='Search...' name='search' value="">
     <input class="button" type='submit' value='search'>
 </form>
-</div>
-<h1>Library</h1>
-<form class="content" action='library.php' method='get'>
 
+<h1>Library</h1>
+<form action='library.php' method='get'>
 <input class="button" type="submit" value="See Books">
 <br>
 </form>
+</div>
 <?php include 'footer.php';  ?>
 </body>
 </html>
