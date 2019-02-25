@@ -79,7 +79,7 @@ echo '<form action="checkout.php" method="post">';
 ?>
 <br>
 <h2>Add a Book</h2>
-<form action="add_book.php" method="post">
+<form class="form" action="add_book.php" method="post">
 	<label>Title</label>
 	<input type="text" name="title"><br>
 
