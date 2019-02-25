@@ -9,7 +9,8 @@ session_start();
 </head>
 <body>
 <?php include 'header.php' ?>
-<div>
+<br>
+<div class="content">
     <form action='Authentication.php' method='post'>
     <label>Username</label>
     <input type='text' name='username' value=""><br>

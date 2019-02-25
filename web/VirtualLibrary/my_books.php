@@ -33,12 +33,12 @@ if ($username == "") {
     WHERE bp.patron_id = $patron_id";
     $statement = $db->prepare($query);
     $statement->execute();
-    echo "<h3>Title                           Due Date</h3>";
+    echo "<h3 class='content'>Title                           Due Date</h3>";
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         $title = $row['title'];
         $due_date = $row['due_date'];
         $checked_out = $row['checked_out'];
-          echo "<p>$title                       $due_date</p>";
+          echo "<p class='content'>$title                       $due_date</p>";
     }
     echo "</div>";
     include 'footer.php';
