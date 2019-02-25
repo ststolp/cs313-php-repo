@@ -46,7 +46,7 @@ $_SESSION['user_id'] = $user_id;
     $due_date_array = $statement_due->fetch(PDO::FETCH_ASSOC);
      $due_date = $due_date_array['due_date'];
 ?>
-
+<div class="content">
      <p>Items will be available until the date 
      listed below.</p>
      <h3><?php echo "$items_amount"; ?> item(s) checked out</h3>
@@ -86,6 +86,7 @@ foreach($checkout as $newBook) {
     $statement->execute();
 }
 }
+echo "</div>";
 include 'footer.php';
 die();
 

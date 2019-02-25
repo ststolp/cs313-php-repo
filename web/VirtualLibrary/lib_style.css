@@ -39,13 +39,13 @@ body {
 .top a.active {
     background-color: rgb(121, 190, 190);
 }
-p {
+p.content {
     font-family: Verdana, sans-serif;
     color: rgb(54, 71, 71);
     white-space: pre;
 }
 
-h3 {
+h3.content {
     white-space: pre;
 }
 
@@ -61,8 +61,12 @@ h3 {
 }
 
 .form {
-      text-align: center;
+      
       padding: 4%;
       backgound-color: rgb(228, 235, 230);       
+}
+
+.content {
+    padding-left: 4%;
 }
 

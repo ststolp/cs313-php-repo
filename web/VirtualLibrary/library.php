@@ -12,7 +12,7 @@ $query = "";
 <body>
 <?php
 include 'header.php';
-echo "<div><h1>The Library</h1>";
+echo "<div class='content'><h1>The Library</h1>";
 $search = $_POST['search'];
 if ($search != "") {
 	$method = $_POST['method'];
@@ -60,7 +60,7 @@ $statement = $db->prepare($query);
 }
 
 
-echo '<form action="checkout.php" method="post">';
+echo '<form class="content" action="checkout.php" method="post">';
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
 	   $book_id = $row['book_id'];

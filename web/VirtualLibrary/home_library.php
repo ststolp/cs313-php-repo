@@ -10,7 +10,7 @@ $db = get_db();
 </head>
 <body>
 <?php include 'header.php';  ?>
-<div>
+<div class="content">
 <form action='library.php' method='post'><br>
     <label>Author's last name</label>
     <input type='checkbox' name='method' value='lname'>
@@ -23,11 +23,11 @@ $db = get_db();
 </form>
 </div>
 <h1>Library</h1>
-<form action='library.php' method='get'>
+<form class="content" action='library.php' method='get'>
 
 <input class="button" type="submit" value="See Books">
 <br>
-<?php include 'footer.php';  ?>
 </form>
+<?php include 'footer.php';  ?>
 </body>
 </html>
