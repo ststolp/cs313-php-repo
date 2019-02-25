@@ -28,48 +28,60 @@ CREATE TABLE books (
 	FOREIGN KEY (author_id) REFERENCES author(author_id),
     FOREIGN KEY (patron_id) REFERENCES patron(patron_id)
 );
+-----------------------------------------------------------------------------------------
+INSERT INTO patron (fname, lname) 
+VALUES ('The', 'Librarian');
 
---INSERT INTO patron (fname, lname) 
---VALUES ("The", "Librarian");
+INSERT INTO genre ( genre)
+VALUES ('Action');
 
---INSERT INTO genre ( genre)
---VALUES ('Action');
+INSERT INTO author (fname, lname, genre_id)
+VALUES ('Suzanne', 'Collins', (SELECT genre_id FROM genre WHERE genre = 'Action') );
 
---INSERT INTO author (fname, lname, genre_id)
---VALUES ('Suzanne', 'Collins', 1);
---INSERT INTO books (title, author_id,
---patron_id, due_date, year, publisher)
---VALUES ('The Hunger Games', 1, 1
---, LOCALTIMESTAMP(2) + interval '30' day, '2008-10-10 10:10:10', 'Scholastic');
+INSERT INTO books (title, author_id,
+patron_id, due_date, year, publisher)
+VALUES ('The Hunger Games', (SELECT author_id FROM author WHERE lname = 'Collins'), 
+(SELECT patron_id FROM patron WHERE fname = 'The')
+, LOCALTIMESTAMP(2) + interval '30' day, '2008-10-10 10:10:10', 'Scholastic');
 
 INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ( 'Catching Fire', 1, 1
+VALUES ( 'Catching Fire', (SELECT author_id FROM author WHERE lname = 'Collins')
+, (SELECT patron_id FROM patron WHERE fname = 'The')
 , LOCALTIMESTAMP(2) + interval '30' day, '2009-10-10 10:10:10', 'Scholastic');
 
 INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ('Mockingjay', 1, 1
+VALUES ('Mockingjay', (SELECT author_id FROM author WHERE lname = 'Collins')
+, (SELECT patron_id FROM patron WHERE fname = 'The')
 , LOCALTIMESTAMP(2) + interval '30' day, '2010-10-10 10:10:10', 'Scholastic');
 
 INSERT INTO author (fname, lname, genre_id)
-VALUES ( 'Classandra', 'Clare', 1);
+VALUES ( 'Classandra', 'Clare', (SELECT genre_id FROM genre WHERE genre = 'Action'));
 
 INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ( 'City of Bones', 2, 1
+VALUES ( 'City of Bones', (SELECT author_id FROM author WHERE fname = 'Classandra'),
+ (SELECT patron_id FROM patron WHERE fname = 'The')
 , LOCALTIMESTAMP(2) + interval '30' day, '2007-10-10 10:10:10', 'Margaret K. McElderry');
 
 INSERT INTO author (fname, lname, genre_id)
-VALUES ('Clive', 'Cluster', 1);
+VALUES ('Clive', 'Cluster', (SELECT genre_id FROM genre WHERE genre = 'Action'));
 
 INSERT INTO books (title, author_id
 , patron_id, due_date, year, publisher)
-VALUES ('Sahara', 3, 1
+VALUES ('Sahara', (SELECT author_id FROM author WHERE fname = 'Clive')
+, (SELECT patron_id FROM patron WHERE fname = 'The')
 , LOCALTIMESTAMP(2) + interval '30' day, '1992-10-10 10:10:10', 'Simon & Schuster');
 
 -------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 --not inserted    .
+
+CREATE TABLE users 
+(
+	id 
+)
 
 INSERT INTO genre (genre)
 VALUES ("Cooking");
@@ -79,12 +91,12 @@ VALUES ( "Shizuo", "Tsuji", 2);
 
 INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ("Japanese Cooking: A Simple Art", 4, 1
+VALUES ("Japanese Cooking: A Simple Art", 4, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 2006, "Kodansha International");
 
 INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ("Practical Japanese Cooking Easy and Elegant", 4, 1
+VALUES ("Practical Japanese Cooking Easy and Elegant", 4, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 1986, "Kodansha International");
 
 INSERT INTO author ( fname, lname, genre_id)
@@ -92,7 +104,7 @@ VALUES ("Nancy", "Hachisu", 2);
 
 INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ("Japan: The Cookbook", 5, 1
+VALUES ("Japan: The Cookbook", 5, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 2018, "Phaidon Press");
 
 INSERT INTO genre ( genre)
@@ -103,7 +115,7 @@ VALUES ("Robert Louis", "Stevenson", 3);
 
 INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ("Treasure Island", 6, 1
+VALUES ("Treasure Island", 6, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 1883, "Cassell and Company");
 
 
@@ -131,7 +143,7 @@ VALUES ( "Walter", "Scott", 9);
 
 INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ( "Ivanhoe", 7, 1
+VALUES ( "Ivanhoe", 7, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 1820, "Hurst, Robinson, and Co.");
 
 INSERT INTO author (fname, lname, genre_id)
@@ -144,7 +156,7 @@ VALUES ( "The Hunchback of Notre-Dame", 8, 1
 
 INSERT INTO books ( title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ("Les Miserables", 8, 1
+VALUES ("Les Miserables", 8, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 1862, "A. Lacroix, Verboeckhoven & Cie");
 
 INSERT INTO author (fname, lname, genre_id)
@@ -152,7 +164,7 @@ VALUES (seq_author.nextval, "Leo", "Tolstoy", 10);
 
 INSERT INTO books (title, author_id,
 patron_id, due_date, year, publisher)
-VALUES ( "War and Peace", 9, 1
+VALUES ( "War and Peace", 9, (SELECT patron_id FROM patron WHERE fname = 'The')
 , TIMESTAMP + 30, 1869, "Thre Russian Messanger");
 
 INSERT INTO genre ( genre)
