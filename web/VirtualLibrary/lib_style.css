@@ -68,6 +68,9 @@ h3.content {
       
 }
 
+Label {
+    font-family: Arial;
+}
 .content {
     padding-left: 4%;
 }
