@@ -15,7 +15,7 @@ session_start();
     <label>Username</label>
     <input type='text' name='username' value=""><br><br>
     <label>Password</label>
-    <input type='text' name='password' value=""><br><br>
+    <input type='password' name='password' value=""><br><br>
     <input class="button" type='submit' value='Sign In'>
     </form>
 </div>
