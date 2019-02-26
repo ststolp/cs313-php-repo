@@ -47,7 +47,7 @@ if ($fname != "") {
       echo "author_id is: $author_id";
 }
 
-    $query = "INSERT INTO books (title, author_id, patron_id, due_date, year, publisher) 
+    $query = "INSERT INTO books (title, author_id, due_date, year, publisher) 
     VALUES (:title, :author_id, (SELECT CURRENT_DATE), :year, :publisher)";
     $statement = $db->prepare($query);
 
