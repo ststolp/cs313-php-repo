@@ -19,14 +19,14 @@ if ($search != "") {
 	if ($method == 'lname') {
 		$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
-		WHERE a.lname = '$search'
+		WHERE a.lname LIKE '%$search%'
 		ORDER BY b.title";
 		$statement = $db->prepare($query);
 		$statement->execute();
 	} else if ($method == 'title') {
 		$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
-		WHERE b.title = '$search'
+		WHERE b.title LIKE '%$search%'
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
@@ -35,7 +35,7 @@ $statement = $db->prepare($query);
        	$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
 		INNER JOIN genre g ON a.genre_id = g.genre_id
-		WHERE g.genre = '$search'
+		WHERE g.genre LIKE '%$search%'
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
@@ -44,7 +44,7 @@ $statement = $db->prepare($query);
 
 	$query = "SELECT b.book_id, b.title, a.fname, a.lname, b.year, b.publisher FROM books b
 		INNER JOIN author a ON b.author_id = a.author_id
-		WHERE b.title = '$search'
+		WHERE b.title LIKE '%$search%'
 		ORDER BY b.title";
 $statement = $db->prepare($query);
 		$statement->execute();
